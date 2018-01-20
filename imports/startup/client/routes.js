@@ -15,12 +15,12 @@ Router.configure({
     // all properties available in the route function
     // are also available here such as this.params
   
-    if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
+    if (Meteor.userId()=="wFuArX85jiCYPXTre") {
       // if the user is not logged in, render the Login template
       this.next();
       this.redirect('/logged');
     }
-    if (Meteor.userId()=="BkkiNSwjsys9MdNcR") {
+    if (Meteor.userId()=="LdFqSmqbr3eu7PBF3") {
         // if the user is not logged in, render the Login template
         this.next();
         this.redirect('/logged2');   
