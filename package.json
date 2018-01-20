@@ -2,7 +2,7 @@
   "name": "training3",
   "private": true,
   "scripts": {
-    "start": "meteor main.js"
+    "start": "node main.js"
   },
   "main": "main.js",
   "engines": {
