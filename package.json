@@ -1,0 +1,14 @@
+{
+  "name": "training3",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "clappr": "^0.2.85",
+    "clappr-video360": "0.0.3",
+    "meteor-node-stubs": "^0.3.2",
+    "videojs-panorama": "^0.1.7"
+  }
+}
