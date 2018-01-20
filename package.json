@@ -2,9 +2,8 @@
   "name": "testpanoramajlltur",
   "private": true,
   "scripts": {
-    "start": "meteor main.js"
+    "start": "meteor run"
   },
-  "main": "main.js",
   "engines": {
     "node": "8.9.3",
 	"npm": "5.5.1"
