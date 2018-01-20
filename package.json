@@ -2,7 +2,7 @@
   "name": "testpanoramajlltur",
   "private": true,
   "scripts": {
-    "start": "node main.js"
+    "start": "meteor main.js"
   },
   "main": "main.js",
   "engines": {
