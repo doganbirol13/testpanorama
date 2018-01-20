@@ -1,5 +1,5 @@
 {
-  "name": "training3",
+  "name": "testpanoramajlltur",
   "private": true,
   "scripts": {
     "start": "node main.js"
