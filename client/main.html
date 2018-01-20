@@ -27,15 +27,12 @@
             </div>
             <p>{{>yield "anothertemplate"}}</p>
         </div>
-        <div class="row">
-          {{>yield "videos"}}
-        </div>
     </div>
   </div>
 </template>
 
 <template name="login">
-  <div class="formcustom">
+  <div class="formcustom smoothborder">
     <form>
         <div class="form-group">
           <label for="email">Email address</label>
@@ -52,6 +49,11 @@
         </div>
     </form>
   </div> 
+</template>
+
+<template name="loginpagewelcometext">
+    <br>
+    <p class="welcpara smoothborder">See the real estate projects in 360 degrees with photos, videos, and navigate within, where possible.</p>
 </template>
 
 <template name="welcomepic">
@@ -86,6 +88,12 @@
             <div class="navbar-header">
               <a class="navbar-brand" href="#"><img src="/logo.png"  alt="logo"></a>
             </div>
+
+            <div class="pull-right">
+                <ul class="nav navbar-nav">
+                    <li><a align="right" href="#">{{> loginButtons}}</a></li>                  
+                </ul>    
+            </div>
        <!--     <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#">Page 1</a></li>
@@ -115,7 +123,7 @@
           </ul> -->
           <div class="pull-right">
               <ul class="nav navbar-nav">
-                  <li><a align="right" href="#">{{> loginButtons align="right"}}</a></li>
+                  <li><a align="right" href="#" class="logout">Logout</a></li>                  
               </ul>    
           </div>
         </div>
@@ -225,7 +233,7 @@
     A,!1),l.removeEventListener("webkitfullscreenchange",A,!1),l.removeEventListener("msfullscreenchange",A,!1),l.removeEventListener("fullscreenchange",A,!1),z.removeEventListener("resize",ga,!1),z.removeEventListener("orientationchange",ga,!1),l.removeEventListener("keydown",wa,!1),l.removeEventListener("keyup",la,!1),l.removeEventListener("blur",R,!1),k.removeEventListener("mouseleave",fa,!1),F.removeEventListener("touchstart",va,!1),F.removeEventListener("touchmove",aa,!1),F.removeEventListener("touchend",
     v,!1),F.removeEventListener("pointerdown",d,!1),F.removeEventListener("pointermove",a,!1),F.removeEventListener("pointerup",K,!1),F.removeEventListener("pointerleave",K,!1));l.innerHTML="";l.classList.remove("pnlm-container");l.classList.remove("pnlm-grab");l.classList.remove("pnlm-grabbing")}}return{viewer:function(g,k){return new ia(g,k)}}}(window,document); 
   </script>
-  <div id="panorama" style="width:90%;height:390px;margin:auto;"></div>
+  <div id="panorama" style="width:90%;height:390px;margin:auto;" class="grow"></div>
   <script>
     pannellum.viewer('panorama', {   
         "default": {
@@ -282,6 +290,7 @@
             "vacantshop": {
               "type": "equirectangular",
               "panorama": "/SC6.jpeg",
+              "autoRotate": -7,
               "vaov": 180,
                 "hotSpots": [
                     {
@@ -313,12 +322,12 @@
 
 <template name="welcometext">
   <h2 class="custom-headline">ViTour the Acme Shopping Center</h2><br>
-  <p class="custom-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas finibus eros quis dictum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In quam lacus, congue quis tempor ut, venenatis eu tellus. Suspendisse ut mi nec quam ultrices malesuada.</p>
+  <p class="custom-para blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas finibus eros quis dictum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In quam lacus, congue quis tempor ut, venenatis eu tellus. Suspendisse ut mi nec quam ultrices malesuada.</p>
 </template>
 
 <template name="welcometext2">
     <h2 class="custom-headline">ViTour the Acme Offices</h2><br>
-    <p class="custom-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas finibus eros quis dictum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In quam lacus, congue quis tempor ut, venenatis eu tellus. Suspendisse ut mi nec quam ultrices malesuada.</p>
+    <p class="custom-para blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas finibus eros quis dictum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In quam lacus, congue quis tempor ut, venenatis eu tellus. Suspendisse ut mi nec quam ultrices malesuada.</p>
   </template>
 
 <template name="anothertemplate">
@@ -433,7 +442,7 @@
     A,!1),l.removeEventListener("webkitfullscreenchange",A,!1),l.removeEventListener("msfullscreenchange",A,!1),l.removeEventListener("fullscreenchange",A,!1),z.removeEventListener("resize",ga,!1),z.removeEventListener("orientationchange",ga,!1),l.removeEventListener("keydown",wa,!1),l.removeEventListener("keyup",la,!1),l.removeEventListener("blur",R,!1),k.removeEventListener("mouseleave",fa,!1),F.removeEventListener("touchstart",va,!1),F.removeEventListener("touchmove",aa,!1),F.removeEventListener("touchend",
     v,!1),F.removeEventListener("pointerdown",d,!1),F.removeEventListener("pointermove",a,!1),F.removeEventListener("pointerup",K,!1),F.removeEventListener("pointerleave",K,!1));l.innerHTML="";l.classList.remove("pnlm-container");l.classList.remove("pnlm-grab");l.classList.remove("pnlm-grabbing")}}return{viewer:function(g,k){return new ia(g,k)}}}(window,document); 
   </script>
-  <div id="panorama2" style="width:90%;height:390px;margin:auto;"></div>
+  <div id="panorama2" style="width:90%;height:390px;margin:auto;" class="grow"></div>
   <script>
     pannellum.viewer('panorama2', {   
         "default": {
@@ -447,6 +456,8 @@
                 "type": "equirectangular",
                 "panorama": "/entrance.jpg",
                 "vaov": 90,
+                "hfov": 150,
+                "autoRotate": -7,   
                 "hotSpots": [
                     {
                         "pitch": -5,
@@ -462,6 +473,7 @@
               "type": "equirectangular",
               "panorama": "/hall.jpg",
               "vaov": 90,
+              "autoRotate": -7,   
               "yaw": 200,
                 "hotSpots": [
                     {
@@ -485,6 +497,7 @@
               "type": "equirectangular",
               "panorama": "/interior.jpg",
               "vaov": 90,
+              "autoRotate": -7,
                 "hotSpots": [
                 {
                     "pitch": -5,

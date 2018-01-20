@@ -13,6 +13,14 @@ Template.login.events({
   }
 });
 
+
+Template.nav2.events({
+    'click .logout': function(event){
+        event.preventDefault();
+        Meteor.logout();
+    }
+});
+
 Template.officevideo.onRendered(function () {
   // The URL to the 360 video player 
   var Video360Url = '/SampleOfficeVideo1.mp4';

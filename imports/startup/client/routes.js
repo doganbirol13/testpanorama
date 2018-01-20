@@ -15,6 +15,7 @@ Router.configure({
     // all properties available in the route function
     // are also available here such as this.params
   
+    //produsers
     if (Meteor.userId()=="wFuArX85jiCYPXTre") {
       // if the user is not logged in, render the Login template
       this.next();
@@ -25,6 +26,18 @@ Router.configure({
         this.next();
         this.redirect('/logged2');   
     } 
+    //dev users
+    if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
+      // if the user is not logged in, render the Login template
+      this.next();
+      this.redirect('/logged');
+    }
+    if (Meteor.userId()=="BkkiNSwjsys9MdNcR") {
+        // if the user is not logged in, render the Login template
+        this.next();
+        this.redirect('/logged2');   
+    } 
+
     else {
       // otherwise don't hold up the rest of hooks or our route/action function
       // from running
@@ -36,9 +49,11 @@ Router.configure({
   Router.route('/', function () {
     this.render('welcome', {to: 'welcome'});
     this.render('welcomepic', {to: 'welcomepic'});
-    this.render('nav2', {to: 'nav1'});
+    this.render('nav1', {to: 'nav1'});
     this.render('login', {to: 'login'});
     this.render('void', {to: 'panoviewer'});
+    this.render('loginpagewelcometext', {to: 'welcometext'});
+    this.render('void', {to: 'anothertemplate'});
   });
   
   Router.route('/logged', function () {
