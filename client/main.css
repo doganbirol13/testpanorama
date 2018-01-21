@@ -41,7 +41,6 @@ h3 {
     background-color: #e8e5dd;
     width: 1000px;
     text-align: center;
-    border-radius:2%;
 }
 
 .parentpicdiv {
@@ -103,7 +102,7 @@ h3 {
 
 .welcpara {
     color: #7f7f7f;
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic;
     font-family: "Arial", Helvetica, sans-serif;
 
@@ -122,5 +121,20 @@ h3 {
 
 .blockquote {
 	margin: 1em 3em;
-	border-left: 2px solid #999;
+    border-left: 2px solid #999;
+    border-right: 2px solid #999;
     padding-left: 1em;}
+
+.blockquote2 {
+        margin: 1em 3em;
+        border-left: 2px solid #ffffff;
+        border-right: 2px solid #ffffff;
+        padding-left: 1em;
+        color: #ffffff;}
+
+.void-row-style {
+        margin: auto;
+        background-color: #e8e5dd;
+        width: 1000px;
+        text-align: center;
+    }

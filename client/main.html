@@ -21,11 +21,15 @@
             <br><br>
         </div>
         <div class="row custom-style">
-            <p>{{>yield "welcometext"}}</p>
+            <div class="row">
+                <p>{{>yield "welcometext"}}</p>
+            </div>
             <div class="row vid-row-style">
                 {{>yield "panoviewer"}}
             </div>
-            <p>{{>yield "anothertemplate"}}</p>
+            <div class="row">
+                <p>{{>yield "anothertemplate"}}</p>
+            </div>
         </div>
     </div>
   </div>
@@ -52,8 +56,7 @@
 </template>
 
 <template name="loginpagewelcometext">
-    <br>
-    <p class="welcpara smoothborder">See the real estate projects in 360 degrees with photos, videos, and navigate within, where possible.</p>
+    <div class="row blockquote2">Welcome to 360 ViP. The credentials provided to you will direct you to the projects content customized regarding to the real estate project(s).</div>
 </template>
 
 <template name="welcomepic">
