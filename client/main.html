@@ -457,14 +457,15 @@
         "scenes": {
             "entrance": {
                 "type": "equirectangular",
-                "panorama": "/entrance.jpg",
-                "vaov": 90,
-                "hfov": 150,
+                "panorama": "/entrance1.JPG",
+                "vaov": 120,
+                "yaw": -130,
+                "hfov": 100,
                 "autoRotate": -7,   
                 "hotSpots": [
                     {
                         "pitch": -5,
-                        "yaw": 0,
+                        "yaw": -115,
                         "type": "scene",
                         "text": "Hall",
                         "sceneId": "hall"
@@ -474,14 +475,14 @@
     
             "hall": {
               "type": "equirectangular",
-              "panorama": "/hall.jpg",
-              "vaov": 90,
+              "panorama": "/hall1.JPG",
+              "vaov": 120,
               "autoRotate": -7,   
               "yaw": 200,
                 "hotSpots": [
                     {
                         "pitch": 0,
-                        "yaw": 220,
+                        "yaw": 200,
                         "type": "scene",
                         "text": "Interior",
                         "sceneId": "interior",
@@ -489,7 +490,7 @@
                     },
                     {
                     "pitch": -5,
-                    "yaw": 10,
+                    "yaw": -60,
                     "type": "scene",
                     "text": "Entrance",
                     "sceneId": "entrance"
@@ -498,16 +499,38 @@
             },
             "interior": {
               "type": "equirectangular",
-              "panorama": "/interior.jpg",
-              "vaov": 90,
+              "panorama": "/interior1.JPG",
+              "vaov": 120,
               "autoRotate": -7,
                 "hotSpots": [
                 {
                     "pitch": -5,
-                    "yaw": 40,
+                    "yaw": 65,
+                    "type": "scene",
+                    "text": "Cafeteria",
+                    "sceneId": "cafeteria"
+                },  
+                {
+                    "pitch": -5,
+                    "yaw": -105,
                     "type": "scene",
                     "text": "Hall",
                     "sceneId": "hall"
+                }           
+                ]
+            },
+            "cafeteria": {
+              "type": "equirectangular",
+              "panorama": "/cafe1.JPG",
+              "vaov": 120,
+              "autoRotate": -7,
+                "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 125,
+                    "type": "scene",
+                    "text": "Interior",
+                    "sceneId": "interior"
                 }          
                 ]
             }
