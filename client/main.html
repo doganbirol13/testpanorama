@@ -348,9 +348,13 @@
                 /* body:before will also work
                  as will body:after */
                 :root:before {
-                  content: url(/hall1.JPG)
-                           url(/townhall1.jpg)
-                           url(/cafe1.JPG);
+                  content: url(/banneredentrance.jpg)
+                           url(/banneredhall.jpg)
+                           url(/banneredtownhall.JPG)
+                           url(/banneredcafe.jpg)
+                           url(/banneredworkstations.jpg)
+                           url(/bannered1stfloor.jpg)
+                           url(/bannered2ndfloor.jpg);
                   /* partial fallback */
                   //background-image: url(/@/Storage/_files/68/file.jpg);
                   visibility: hidden;
@@ -467,15 +471,15 @@
         "scenes": {
             "entrance": {
                 "type": "equirectangular",
-                "panorama": "https://i.imgur.com/ISpARVR.jpg",
-                "vaov": 120,
+                "panorama": "/banneredentrance.jpg",
+                "vaov": 180,
                 "yaw": -130,
                 "hfov": 100,
                 "autoRotate": -7,   
                 "hotSpots": [
                     {
                         "pitch": -5,
-                        "yaw": -115,
+                        "yaw": -20,
                         "type": "scene",
                         "text": "Hall",
                         "sceneId": "hall"
@@ -485,32 +489,40 @@
     
             "hall": {
               "type": "equirectangular",
-              "panorama": "/hall1.JPG",
-              "vaov": 120,
+              "panorama": "/banneredhall.jpg",
+              "vaov": 180,
               "autoRotate": -7,   
               "yaw": 200,
                 "hotSpots": [
                     {
                         "pitch": 0,
-                        "yaw": 200,
+                        "yaw": 190,
                         "type": "scene",
-                        "text": "Interior",
+                        "text": "Town Hall",
                         "sceneId": "interior",
                         "targetYaw": 0
                     },
                     {
-                    "pitch": -5,
-                    "yaw": -60,
-                    "type": "scene",
-                    "text": "Entrance",
-                    "sceneId": "entrance"
+                        "pitch": 20,
+                        "yaw": 0,
+                        "type": "scene",
+                        "text": "First Floor",
+                        "sceneId": "firstfloor",
+                        "targetYaw": 0
+                    },
+                    {
+                        "pitch": 0,
+                        "yaw": 30,
+                        "type": "scene",
+                        "text": "Entrance",
+                        "sceneId": "entrance"
                 }          
                 ]
             },
             "interior": {
               "type": "equirectangular",
-              "panorama": "/townhall1.jpg",
-              "vaov": 120,
+              "panorama": "/banneredtownhall.jpg",
+              "vaov": 180,
               "autoRotate": -7,
                 "hotSpots": [
                 {
@@ -519,6 +531,13 @@
                     "type": "scene",
                     "text": "Cafeteria",
                     "sceneId": "cafeteria"
+                },  
+                {
+                    "pitch": -5,
+                    "yaw": 245,
+                    "type": "scene",
+                    "text": "Work Stations",
+                    "sceneId": "workstations"
                 },  
                 {
                     "pitch": -5,
@@ -537,17 +556,69 @@
             },
             "cafeteria": {
               "type": "equirectangular",
-              "panorama": "/cafe1.JPG",
-              "vaov": 120,
+              "panorama": "/banneredcafe.jpg",
+              "vaov": 180,
               "autoRotate": -7,
                 "hotSpots": [
                 {
                     "pitch": 0,
-                    "yaw": 125,
+                    "yaw": -70,
                     "type": "scene",
                     "text": "Interior",
                     "sceneId": "interior"
                 }          
+                ]
+            },
+            "workstations": {
+              "type": "equirectangular",
+              "panorama": "/banneredworkstations.jpg",
+              "vaov": 180,
+              "autoRotate": -7,
+                "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 20,
+                    "type": "scene",
+                    "text": "Istanbul Town Hall",
+                    "sceneId": "interior"
+                },                 
+                ]
+            },
+            "firstfloor": {
+              "type": "equirectangular",
+              "panorama": "/bannered1stfloor.jpg",
+              "vaov": 180,
+              "autoRotate": -7,
+                "hotSpots": [
+                {
+                    "pitch": 10,
+                    "yaw": 90,
+                    "type": "scene",
+                    "text": "2nd Floor",
+                    "sceneId": "secondfloor"
+                },
+                {
+                    "pitch": -5,
+                    "yaw": 110,
+                    "type": "scene",
+                    "text": "Ground Floor",
+                    "sceneId": "hall"
+                }
+                ]
+            },
+            "secondfloor": {
+              "type": "equirectangular",
+              "panorama": "/bannered2ndfloor.jpg",
+              "vaov": 180,
+              "autoRotate": -7,
+                "hotSpots": [
+                {
+                    "pitch": -5,
+                    "yaw": -20,
+                    "type": "scene",
+                    "text": "1st Floor",
+                    "sceneId": "firstfloor"
+                }
                 ]
             }
         }
