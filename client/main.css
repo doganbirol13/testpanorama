@@ -108,8 +108,24 @@ h4 {
 
   .workstations {
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 65%;
+    width: 3%;
+    height: auto;
+  }
+
+  .firstfloor {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 3%;
+    height: auto;
+  }
+
+  .secondfloor {
+    position: absolute;
+    top: 50%;
+    left: 55%;
     width: 3%;
     height: auto;
   }
@@ -210,3 +226,24 @@ h4 {
 .contentbg {
     border: 1px solid #7f7f7f;
 }
+
+.nav-tabs > li > a{
+    color: #e30613;
+  }
+
+  .nav-tabs.centered > li, .nav-pills.centered > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs.centered, .nav-pills.centered {
+    text-align:center;
+}
+
+.layoutplan{
+      background-color:#7f7f7f;
+      color:#e30613;
+      padding:5px
+  }

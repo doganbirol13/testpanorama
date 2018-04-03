@@ -532,27 +532,58 @@
 
    testpart -->
    
-        <div class="parentpicdiv2">
-            <div class="row"><br><h4>Kat Planı</h4><br><p class="custom-para2 blockquote">JLL Turkey tarafından kullanılan zemin kat çalışma alanı, yine JLL iştiraki olan Tetris Design&Build tarafından tasarlandı.</p></div>
-          <img class="pic3 img-fluid contentbg" src="/MaslakLinkLayout.jpg" />
-          <ul class="nav navbar-nav" role="tablist"> 
-            <a class="active" data-toggle="tab" href="#lobby" role="tab">
-                <img title="Lobby" class="lobby img-fluid grow2" src="/dot.png">
-            </a>
-            <a data-toggle="tab" href="#interior" role="tab">
-                <img title="Interior"  class="interior img-fluid grow2" src="/dot.png">
-            </a>
-            <a data-toggle="tab" href="#townhall" role="tab">
-                <img title="Town Hall"  class="townhall img-fluid grow2" src="/dot.png">
-            </a>
-            <a data-toggle="tab" href="#cafeteria" role="tab">
-                <img title="Cafeteria"  class="cafeteria img-fluid grow2" src="/dot.png">
-            </a>
-            <a data-toggle="tab" href="#workstations" role="tab">
-                <img title="Workstations"  class="workstations img-fluid grow2" src="/dot.png">
-            </a>
-        </ul>
-        
+   <div class="row"><br><h4>JLL Turkey Kat Planı</h4><br><p class="custom-para2 blockquote">JLL Turkey ofisi, yine JLL iştiraki olan Tetris Design&Build tarafından tasarlandı.</p></div>
+
+   <ul class="nav nav-tabs centered" role="tablist"> 
+    <li class="active"><a data-toggle="tab" href="#groundfloor" role="tab">Zemin Kat</a></li>
+    <li><a data-toggle="tab" href="#firstfloor" role="tab">Asma Kat</a></li>
+    <li><a data-toggle="tab" href="#secondfloor" role="tab">İkinci Kat</a></li>
+   </ul>
+    <div class="tab-content layoutplan">
+        <div id="groundfloor" class="tab-pane fade in active">
+            <div class="parentpicdiv2">                   
+                <img class="pic3 img-fluid contentbg" src="/MaslakLinkLayout.jpg" />
+                <ul class="nav navbar-nav" role="tablist"> 
+                    <a class="active" data-toggle="tab" href="#lobby" role="tab">
+                        <img title="Lobby" class="lobby img-fluid grow2" src="/dot.png">
+                    </a>
+                    <a data-toggle="tab" href="#interior" role="tab">
+                        <img title="Interior"  class="interior img-fluid grow2" src="/dot.png">
+                    </a>
+                    <a data-toggle="tab" href="#townhall" role="tab">
+                        <img title="Town Hall"  class="townhall img-fluid grow2" src="/dot.png">
+                    </a>
+                    <a data-toggle="tab" href="#cafeteria" role="tab">
+                        <img title="Cafeteria"  class="cafeteria img-fluid grow2" src="/dot.png">
+                    </a>
+                    <a data-toggle="tab" href="#workstations" role="tab">
+                        <img title="Workstations"  class="workstations img-fluid grow2" src="/dot.png">
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div id="firstfloor" class="tab-pane fade">
+            <div class="parentpicdiv2">                   
+                <img class="pic3 img-fluid contentbg" src="/MaslakLink1stFloor.jpg" />
+                <ul class="nav nav-tabs" role="tablist"> 
+                    <a class="active" data-toggle="tab" href="#firstfloor1" role="tab">
+                        <img title="1st Floor" class="firstfloor img-fluid grow2" src="/dot.png">
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div id="secondfloor" class="tab-pane fade">
+            <div class="parentpicdiv2">                   
+                <img class="pic3 img-fluid contentbg" src="/MaslakLink2ndFloor.jpg" />
+                <ul class="nav nav-tabs" role="tablist"> 
+                    <a class="active" data-toggle="tab" href="#secondfloor1" role="tab">
+                        <img title="2nd Floor" class="secondfloor img-fluid grow2" src="/dot.png">
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
         <div class="row"><br><h4>360 Navigasyon</h4><br><p class="custom-para2 blockquote">Kat planı üzerinden seçiminiz, ya da aracın yönlendiricileri ile detayları inceleyebilirsiniz.</p></div>
           <!--   <img class="pic3 img-fluid" src="/MaslakLinkLayout.jpg" />
            <ul class="nav nav-tabs" role="tablist">
@@ -577,7 +608,6 @@
                 </a>
                 </li>
             </ul> -->
-        </div>
             <div class="tab-content">
              <!--   <div id="home" class="tab-pane fade in active">
                 <h3>HOME</h3>
@@ -1449,12 +1479,180 @@
                         });
                     </script>
                 </div>
-                <div id="workstations" class="tab-pane fade active">
-                    <div id="workstationsphoto" style="width:90%;height:390px;margin:auto;" class="grow"></div>
+                <div id="firstfloor1" class="tab-pane fade active">
+                    <div id="firstfloorphoto" style="width:90%;height:390px;margin:auto;" class="grow"></div>
                     <script>
-                      pannellum.viewer('workstationsphoto', {   
+                      pannellum.viewer('firstfloorphoto', {   
                           "default": {
-                              "firstScene": "workstations",
+                              "firstScene": "firstfloor",
+                              "sceneFadeDuration": 1000,
+                              "autoLoad": true
+                          },
+                          
+                          "scenes": {
+                  
+                              "entrance": {
+                                  "type": "equirectangular",
+                                  "panorama": "/banneredentrance.jpg",
+                                  "vaov": 180,
+                                  "yaw": -130,
+                                  "hfov": 100,
+                                  "autoRotate": -7,   
+                                  "hotSpots": [
+                                      {
+                                          "pitch": -5,
+                                          "yaw": -20,
+                                          "type": "scene",
+                                          "text": "Hall",
+                                          "sceneId": "hall"
+                                      }                  
+                                  ]
+                              },
+                      
+                              "hall": {
+                                "type": "equirectangular",
+                                "panorama": "/banneredhall.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,   
+                                "yaw": 200,
+                                  "hotSpots": [
+                                      {
+                                          "pitch": 0,
+                                          "yaw": 190,
+                                          "type": "scene",
+                                          "text": "Town Hall",
+                                          "sceneId": "interior",
+                                          "targetYaw": 0
+                                      },
+                                      {
+                                          "pitch": 20,
+                                          "yaw": 0,
+                                          "type": "scene",
+                                          "text": "First Floor",
+                                          "sceneId": "firstfloor",
+                                          "targetYaw": 0
+                                      },
+                                      {
+                                          "pitch": 0,
+                                          "yaw": 30,
+                                          "type": "scene",
+                                          "text": "Entrance",
+                                          "sceneId": "entrance"
+                                  }          
+                                  ]
+                              },
+                              "interior": {
+                                "type": "equirectangular",
+                                "panorama": "/banneredtownhall.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 140,
+                                      "type": "scene",
+                                      "text": "Cafeteria",
+                                      "sceneId": "cafeteria"
+                                  },  
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 245,
+                                      "type": "scene",
+                                      "text": "Work Stations",
+                                      "sceneId": "workstations"
+                                  },  
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 30,
+                                      "type": "scene",
+                                      "text": "Hall",
+                                      "sceneId": "hall"
+                                  },
+                                  {
+                                          "pitch": -5,
+                                          "yaw": 100,
+                                          "type": "info",
+                                          "text": "Istanbul Town Hall, Capacity: 200, Floor Height: 2,7 m., Space: 80 m^2, Screen: 310', Infrastructure: Videowall"
+                                      }           
+                                  ]
+                              },
+                              "cafeteria": {
+                                "type": "equirectangular",
+                                "panorama": "/banneredcafe.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": 0,
+                                      "yaw": -70,
+                                      "type": "scene",
+                                      "text": "Interior",
+                                      "sceneId": "interior"
+                                  }          
+                                  ]
+                              },
+                              "workstations": {
+                                "type": "equirectangular",
+                                "panorama": "/banneredworkstations.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": 0,
+                                      "yaw": 20,
+                                      "type": "scene",
+                                      "text": "Istanbul Town Hall",
+                                      "sceneId": "interior"
+                                  },                 
+                                  ]
+                              },
+                              "firstfloor": {
+                                "type": "equirectangular",
+                                "panorama": "/bannered1stfloor.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": 10,
+                                      "yaw": 90,
+                                      "type": "scene",
+                                      "text": "2nd Floor",
+                                      "sceneId": "secondfloor"
+                                  },
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 110,
+                                      "type": "scene",
+                                      "text": "Ground Floor",
+                                      "sceneId": "hall"
+                                  }
+                                  ]
+                              },
+                              "secondfloor": {
+                                "type": "equirectangular",
+                                "panorama": "/bannered2ndfloor.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": -5,
+                                      "yaw": -20,
+                                      "type": "scene",
+                                      "text": "1st Floor",
+                                      "sceneId": "firstfloor"
+                                  }
+                                  ]
+                              }
+                          }
+                        });
+                    </script>
+                </div>
+                <div id="secondfloor1" class="tab-pane fade active">
+                    <div id="secondfloorphoto" style="width:90%;height:390px;margin:auto;" class="grow"></div>
+                    <script>
+                      pannellum.viewer('secondfloorphoto', {   
+                          "default": {
+                              "firstScene": "secondfloor",
                               "sceneFadeDuration": 1000,
                               "autoLoad": true
                           },
