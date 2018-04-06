@@ -24,7 +24,7 @@ Router.configure({
     if (Meteor.userId()=="LdFqSmqbr3eu7PBF3") {
         // if the user is not logged in, render the Login template
         this.next();
-        this.redirect('/logged2');   
+        this.redirect('/maslaklink');   
     } 
     //dev users
     if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
@@ -35,7 +35,7 @@ Router.configure({
     if (Meteor.userId()=="QmtP65ptQej65npDm") {
         // if the user is not logged in, render the Login template
         this.next();
-        this.redirect('/logged2');   
+        this.redirect('/maslaklink');   
     } 
 
     else {
@@ -65,7 +65,7 @@ Router.configure({
     this.render('anothertemplate', {to: 'anothertemplate'});
   });
   
-  Router.route('/logged2', function () {
+  Router.route('/maslaklink', function () {
     this.render('void', {to: 'welcome'});
     this.render('welcomepicoffice', {to: 'welcomepic'});
     this.render('nav2', {to: 'nav1'});
