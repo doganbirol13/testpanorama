@@ -26,6 +26,13 @@ Router.configure({
         this.next();
         this.redirect('/maslaklink');   
     } 
+    if (Meteor.userId()=="2zYC93ZXJjcwP6n8i") {
+      // if the user is not logged in, render the Login template
+      this.next();
+      this.redirect('/maslakno1');   
+  } 
+
+    
     //dev users
     if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
       // if the user is not logged in, render the Login template
@@ -37,7 +44,11 @@ Router.configure({
         this.next();
         this.redirect('/maslaklink');   
     } 
-
+    if (Meteor.userId()=="AwcYyZ727EJXj9jj7") {
+      // if the user is not logged in, render the Login template
+      this.next();
+      this.redirect('/maslakno1');   
+  } 
     else {
       // otherwise don't hold up the rest of hooks or our route/action function
       // from running
@@ -73,6 +84,17 @@ Router.configure({
     this.render('welcometext2', {to: 'welcometext'});
     this.render('nav2', {to: 'nav1'});
     this.render('officenavigation', {to: 'panoviewer'});
+    this.render('anothertemplate', {to: 'anothertemplate'});
+  });
+
+  Router.route('/maslakno1', function () {
+    this.render('void', {to: 'welcome'});
+    this.render('welcomepicoffice', {to: 'welcomepic'});
+    this.render('nav2', {to: 'nav1'});
+    this.render('void', {to: 'login'});
+    this.render('maslakno1welcometext', {to: 'welcometext'});
+    this.render('nav2', {to: 'nav1'});
+    this.render('maslakno1navigation', {to: 'panoviewer'});
     this.render('anothertemplate', {to: 'anothertemplate'});
   });
   
