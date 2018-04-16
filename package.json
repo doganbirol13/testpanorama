@@ -13,6 +13,7 @@
     "clappr": "^0.2.85",
     "clappr-video360": "0.0.3",
     "meteor-node-stubs": "^0.3.2",
-    "videojs-panorama": "^0.1.7"
+    "videojs-panorama": "^0.1.7",
+    "vrview": "^0.2.0"
   }
 }
