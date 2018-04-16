@@ -6,11 +6,27 @@ import { Router, RouteController } from 'meteor/iron:router';
 import '/client/main.html';
 
 
+// Listen on a specific host via the HOST environment variable
+var host = process.env.HOST || '0.0.0.0';
+// Listen on a specific port via the PORT environment variable
+var port = process.env.PORT || 8080;
+
+var cors_proxy = require('cors-anywhere');
+cors_proxy.createServer({
+    originWhitelist: ['storage.googleapis.com/vrview/2.0/build/vrview.min.js'], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with'],
+    removeHeaders: ['cookie', 'cookie2']
+}).listen(port, host, function() {
+    console.log('Running CORS Anywhere on ' + host + ':' + port);
+});
+
 Router.configure({
     layoutTemplate: 'PageLayout'
   });
   
   
+
+
   Router.onBeforeAction(function () {
     // all properties available in the route function
     // are also available here such as this.params
@@ -52,7 +68,7 @@ Router.configure({
       this.next();
       this.redirect('/maslakno1');  
     }
-    if (Meteor.userId()=="7khgKyQYR5WtQA3hx") {
+    if (Meteor.userId()=="NL4LRXyDJ58LZsPxP") {
         // if the user is not logged in, render the Login template
         this.next();
         this.redirect('/vrtest');  
