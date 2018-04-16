@@ -3337,28 +3337,30 @@
 
 
 <template name="vrtest">
-        <div id="vrview" style="width:100%;height:500px;"></div>
-       
-        
-        <script type="text/javascript" src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 
         <style>
-            /* body:before will also work
-             as will body:after */
-            :root:before {
-              content: url(/VRTestLobby1.jpg)
-                       url(/VRTestLobby2.jpg);
-              /* partial fallback */
-              /*background-image: url(/@/Storage/_files/68/file.jpg);*/
-              /* visibility: hidden; */
-              position: absolute;
-              left: -999em;
-            }
-            </style>
-
-
+                /* body:before will also work
+                 as will body:after */
+                :root:before {
+                  content: url(/VRTestLobby1.jpg)
+                           url(/VRTestLobby2.jpg);
+                  /* partial fallback */
+                  /*background-image: url(/@/Storage/_files/68/file.jpg);*/
+                  /* visibility: hidden; */
+                  position: absolute;
+                  left: -999em;
+                }
+        </style>
+        <div id="vrview" style="width:100%;height:500px;"></div>
+            
+        <!-- <script type="text/javascript" src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script> -->
+        <script type="text/javascript" src="../node_modules/vrview/build/vrview.min.js"></script>
+        <script type="text/javascript" src="../node_modules/vrview/build/vrview.js"></script>
+        <script type="text/javascript" src="../node_modules/vrview/build/device-motion-sender.min.js"></script>
+        <script type="text/javascript" src="../node_modules/three/build/three.min.js"></script>
+        <script type="text/javascript" src="../node_modules/three/build/three.js"></script>
+ 
         <script>
-        
                     var vrView;
 
             // All the scenes for the experience
@@ -3376,8 +3378,8 @@
                 }
             },
             Lobby: {
-                image: 'VRTestLobby2.jpg',
-                preview: 'VRTestLobby2.jpg',
+                image: '/VRTestLobby2.jpg',
+                preview: '/VRTestLobby2.jpg',
                 hotspots: {
                 Entrance: {
                     pitch: 0,

@@ -4,8 +4,11 @@ import { Meteor } from 'meteor/meteor';
 import { EJSON } from 'meteor/ejson';
 import { Router, RouteController } from 'meteor/iron:router';
 
-
 import '/client/main.html';
+
+Meteor.call("checkGoogle", function(error, results) {
+  console.log(results.content); //results.data should be a JSON object
+});
 
 Router.configure({
     layoutTemplate: 'PageLayout'
@@ -27,7 +30,7 @@ Router.configure({
         this.next();
         this.redirect('/maslaklink');   
     } 
-    if (Meteor.userId()=="AwcYyZ727EJXj9jj7") {
+    if (Meteor.userId()=="2zYC93ZXJjcwP6n8i") {
       // if the user is not logged in, render the Login template
       this.next();
       this.redirect('/maslakno1'); 
@@ -58,12 +61,6 @@ Router.configure({
         this.next();
         this.redirect('/vrtest');  
     } 
-    else {
-      // otherwise don't hold up the rest of hooks or our route/action function
-      // from running
-      this.next();
-      this.redirect('/');
-    }
   });
   
   Router.route('/', function () {
