@@ -91,6 +91,15 @@ h4 {
     width: 3%;
     height: auto;
   }
+
+  .clicktest2 {
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    width: 3%;
+    height: auto;
+  }
+
 .interior {
     position: absolute;
     top: 40%;

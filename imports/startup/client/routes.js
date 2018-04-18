@@ -6,9 +6,7 @@ import { Router, RouteController } from 'meteor/iron:router';
 
 import '/client/main.html';
 
-Meteor.call("checkGoogle", function(error, results) {
-  console.log(results.content); //results.data should be a JSON object
-});
+
 
 Router.configure({
     layoutTemplate: 'PageLayout'
@@ -60,7 +58,17 @@ Router.configure({
         // if the user is not logged in, render the Login template
         this.next();
         this.redirect('/vrtest');  
-    } 
+    }
+    if (Meteor.userId()=="7khgKyQYR5WtQA3hx") {
+      // if the user is not logged in, render the Login template
+      this.next();
+      this.redirect('/vrtest');  
+    }    
+    else
+    {
+      this.next();
+      this.redirect('/');
+    }
   });
   
   Router.route('/', function () {

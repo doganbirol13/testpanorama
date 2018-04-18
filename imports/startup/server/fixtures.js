@@ -1,4 +1,3 @@
-import { WebApp } from 'meteor/webapp';
 import { Router, RouteController } from 'meteor/iron:router';
 
 /* // Listen to incoming HTTP requests, can only be used on the server

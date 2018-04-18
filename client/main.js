@@ -1,9 +1,6 @@
 
 import '/imports/startup/client';
 
-var Clappr = require("clappr");
-var Video360 = require("clappr-video360");
-
 Template.login.events({
   'submit form': function(event){
       event.preventDefault();
@@ -20,6 +17,13 @@ Template.nav2.events({
         Meteor.logout();
     }
 });
+
+
+Meteor.call("checkGoogle", function(error, results) {
+    console.log(results); //results.data should be a JSON object
+  });
+/* var Clappr = require("clappr");
+var Video360 = require("clappr-video360");
 
 Template.officevideo.onRendered(function () {
   // The URL to the 360 video player 
@@ -38,4 +42,4 @@ Template.officevideo.onRendered(function () {
   // Important to disable the click to pause native plugin of clappr
   // otherwise you won't be able to use correctly the player
   PlayerInstance.getPlugin('click_to_pause').disable();
-});
+}); */
