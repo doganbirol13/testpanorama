@@ -38,6 +38,11 @@ Router.configure({
       this.next();
       this.redirect('/vrtest');   
     } 
+    if (Meteor.userId()=="P5zbysdxsKB2TqmAc") {
+      // if the user is not logged in, render the Login template
+      this.next();
+      this.redirect('/vrtest');   
+    } 
     //dev users
     if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
       // if the user is not logged in, render the Login template
