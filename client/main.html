@@ -163,7 +163,11 @@
                            url(/banneredcafe.jpg)
                            url(/banneredmobileworkstations.jpg)
                            url(/bannered1stfloor.jpg)
-                           url(/bannered2ndfloor.jpg);
+                           url(/MaslakLinkLayoutShellCore.jpg)
+                           url(/MaslakLinkShellAndCoreElevators.jpg)
+                           url(/MaslakLinkShellAndCoreLeftPart.jpg)
+                           url(/MaslakLinkShellAndCoreRightPart.jpg)
+                           url(/MaslakLinkShellAndCoreView.jpg);
                   /* partial fallback */
                   /*background-image: url(/@/Storage/_files/68/file.jpg);*/
                   visibility: hidden;
@@ -172,12 +176,13 @@
                 }
                 </style>
    
-   <div class="row"><br><h4>JLL Turkey Floor Plan</h4><br><p class="custom-para2">The office was designed by Tetris Design&Build, a subsidiary of JLL.</p></div>
+   <div class="row"><br><h4>Floor Plan</h4><br><p class="custom-para2">The office was designed by Tetris Design&Build, a subsidiary of JLL.</p></div>
 
    <ul class="nav nav-tabs centered" role="tablist"> 
     <li class="active"><a data-toggle="tab" href="#groundfloorpics" role="tab" id="maslaklinkgroundfloor">Ground Floor</a></li>
     <li><a data-toggle="tab" href="#firstfloorpics" role="tab" id="maslaklinkmezzanine">Mezzanine Floor</a></li>
     <li><a data-toggle="tab" href="#secondfloorpics" role="tab" id="maslaklinkfirstfloor">First Floor</a></li>
+    <li><a data-toggle="tab" href="#shellcorefloorpics" role="tab" id="maslaklinkshellcore">Shell & Core Floor</a></li>
    </ul>
 
    <script>
@@ -206,13 +211,22 @@
         <div id="firstfloorpics" class="tab-pane fade">
             <div class="parentpicdiv2">                   
                 <img class="pic3 img-fluid contentbg" src="/MaslakLink1stFloor.jpg" />
-                <a><img id="MaslakLink1stFloorButton" title="1st Floor" class="firstfloor img-fluid grow2" src="/dot.png"></a>
+                <a><img id="MaslakLink1stFloorButton" title="Mezzanine" class="firstfloor img-fluid grow2" src="/dot.png"></a>
             </div>
-        </div>
+        </div>      
         <div id="secondfloorpics" class="tab-pane fade">
             <div class="parentpicdiv2">                   
                 <img class="pic3 img-fluid contentbg" src="/MaslakLink2ndFloor.jpg" />
-                <a><img id="MaslakLink2ndFloorButton" title="2nd Floor" class="secondfloor img-fluid grow2" src="/dot.png"></a>
+                <a><img id="MaslakLink2ndFloorButton" title="1st Floor" class="secondfloor img-fluid grow2" src="/dot.png"></a>
+            </div>
+        </div>
+        <div id="shellcorefloorpics" class="tab-pane fade">
+            <div class="parentpicdiv2">                   
+                <img class="pic3 img-fluid contentbg" src="/MaslakLinkLayoutShellCore.jpg" />
+                <a><img id="MaslakLinkShellCoreElevatorsFloorButton" title="Shell & Core Floor" class="maslaklinkshellcoreelevators img-fluid grow2" src="/dot.png"></a>
+                <a><img id="MaslakLinkShellCoreLeftPartFloorButton" title="Left Floor Part" class="maslaklinkshellcoreleftfloorpart img-fluid grow2" src="/dot.png"></a>
+                <a><img id="MaslakLinkShellCoreRightPartFloorButton" title="Right Floor Part" class="maslaklinkshellcorerightfloorpart img-fluid grow2" src="/dot.png"></a>
+                <a><img id="MaslakLinkShellCoreFloorViewButton" title="Floor View" class="maslaklinkshellcorefloorview img-fluid grow2" src="/dot.png"></a>
             </div>
         </div>
     </div>
@@ -477,6 +491,112 @@
                                       "type": "scene",
                                       "text": "Mezzanine Floor",
                                       "sceneId": "firstfloor"
+                                  },
+                                  ]
+                              },
+                              "shellandcoreelevators": {
+                                "type": "equirectangular",
+                                "panorama": "/MaslakLinkShellAndCoreElevators.jpg",
+                                "vaov": 180,
+                                "yaw": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": 2,
+                                      "yaw": -150,
+                                      "type": "scene",
+                                      "text": "Floor View",
+                                      "sceneId": "shellandcorefloorview"
+                                  },
+                                  {
+                                      "pitch": -5,
+                                      "yaw": -110,
+                                      "type": "scene",
+                                      "text": "Right Floor Part",
+                                      "sceneId": "shellandcorerightpart"
+                                  },
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 130,
+                                      "type": "scene",
+                                      "text": "Left Floor Part",
+                                      "sceneId": "shellandcoreleftpart"
+                                  }
+                                  ]
+                              },
+                              "shellandcorefloorview": {
+                                "type": "equirectangular",
+                                "panorama": "/MaslakLinkShellAndCoreView.jpg",
+                                "vaov": 180,
+                                "autoRotate": -7,
+                                "yaw": 180,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": 0,
+                                      "yaw": -5,
+                                      "type": "scene",
+                                      "text": "Elevators",
+                                      "sceneId": "shellandcoreelevators"
+                                  },
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 60,
+                                      "type": "scene",
+                                      "text": "Right Floor Part",
+                                      "sceneId": "shellandcorerightpart"
+                                  },
+                                  {
+                                      "pitch": -5,
+                                      "yaw": -60,
+                                      "type": "scene",
+                                      "text": "Left Floor Part",
+                                      "sceneId": "shellandcoreleftpart"
+                                  }
+                                  ]
+                              },
+                              "shellandcorerightpart": {
+                                "type": "equirectangular",
+                                "panorama": "/MaslakLinkShellAndCoreRightPart.jpg",
+                                "vaov": 180,
+                                "yaw": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 160,
+                                      "type": "scene",
+                                      "text": "Elevators",
+                                      "sceneId": "shellandcoreelevators"
+                                  },
+                                  {
+                                      "pitch": -5,
+                                      "yaw": 180,
+                                      "type": "scene",
+                                      "text": "Floor View",
+                                      "sceneId": "shellandcorefloorview"
+                                  }
+                                  ]
+                              },
+                              "shellandcoreleftpart": {
+                                "type": "equirectangular",
+                                "panorama": "/MaslakLinkShellAndCoreLeftPart.jpg",
+                                "vaov": 180,
+                                "yaw": 180,
+                                "autoRotate": -7,
+                                  "hotSpots": [
+                                  {
+                                      "pitch": 0,
+                                      "yaw": 180,
+                                      "type": "scene",
+                                      "text": "Elevators",
+                                      "sceneId": "shellandcoreelevators"
+                                  },
+                                  {
+                                      "pitch": 0,
+                                      "yaw": 150,
+                                      "type": "scene",
+                                      "text": "Floor View",
+                                      "sceneId": "shellandcorefloorview"
                                   }
                                   ]
                               }
@@ -502,10 +622,22 @@
                         $("#MaslakLink1stFloorButton").click( function () {
                             viewer.loadScene('firstfloor');
                         });
+                        $("#MaslakLinkShellCoreFloorViewButton").click( function () {
+                            viewer.loadScene('shellandcorefloorview');
+                        });
+                        
+                        $("#MaslakLinkShellCoreElevatorsFloorButton").click( function () {
+                            viewer.loadScene('shellandcoreelevators');
+                        });
+                        $("#MaslakLinkShellCoreLeftPartFloorButton").click( function () {
+                            viewer.loadScene('shellandcoreleftpart');
+                        });
+                        $("#MaslakLinkShellCoreRightPartFloorButton").click( function () {
+                            viewer.loadScene('shellandcorerightpart');
+                        });
                         $("#MaslakLink2ndFloorButton").click( function () {
                             viewer.loadScene('secondfloor');
                         });
-                        
                     </script>
                 </div>
   </template>
@@ -536,7 +668,7 @@
                 }
                 </style>
 
-        <div class="row"><br><h4>Maslak No:1 Floor Plan</h4><br></div>
+        <div class="row"><br><h4>Floor Plan</h4><br></div>
 
         <ul class="nav nav-tabs centered" role="tablist"> 
         <li class="active"><a data-toggle="tab" href="#maslakno1entrancefloor" role="tab" id="maslakno1lobbytab">Main Entrance</a></li>
