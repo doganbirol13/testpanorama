@@ -1,5 +1,6 @@
 
 import '/imports/startup/client';
+import { jquery } from 'meteor/jquery';
 
 Template.login.events({
   'submit form': function(event){
@@ -18,6 +19,10 @@ Template.nav2.events({
     }
 });
 
+Template.maslakno1navigation.events({
+    'click a img': function(event){   
+    }
+});
 
 Meteor.call("checkGoogle", function(error, results) {
     console.log(results); //results.data should be a JSON object
