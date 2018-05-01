@@ -1366,7 +1366,7 @@
 </template>
 
 
-<template name="vr2">
+<template name="vr2_deactivated">
 <!-- <script src='//vizor.io/static/scripts/vizor-360-embed.js' data-vizorurl='//vizor.io/embed/doganbirol13/maslaklinknavigation'></script> -->
 
 
@@ -1469,4 +1469,70 @@
                             </a-cursor>
                             </a-camera>
                         </a-scene>
+</template>
+
+<template name="vr2">
+        <script>
+
+            (function(){if(settings.isMobile){var nonMobileExamples=document.querySelectorAll('[data-supports-mobile="false"]');for(var i=0;i<nonMobileExamples.length;i++){nonMobileExamples[i].parentNode.removeChild(nonMobileExamples[i]);}}
+            document.body.addEventListener('keyup',function(e){var currentLink;var left=e.keyCode===37;var right=e.keyCode===39;if(!left&&!right){return;}
+            currentLink=getCurrentNavLink();if(!currentLink){return;}
+            clickNavLink(left?getPrevNavLink():getNextNavLink());});var examplePrev=document.querySelector('#examplePrev');var exampleNext=document.querySelector('#exampleNext');examplePrev.addEventListener('click',function(){window.location.href=getDestNavLink(true);});exampleNext.addEventListener('click',function(){window.location.href=getDestNavLink(false);});var exampleInspector=document.querySelector('#exampleInspector');if(exampleInspector){var exampleIframe=document.querySelector('#exampleIframe');var exampleViewsource=document.querySelector('#exampleViewSource');exampleInspector.addEventListener('click',function(){exampleIframe.contentWindow.postMessage('INJECT_AFRAME_INSPECTOR','*');exampleInspector.style.display='none';exampleViewsource.style.display='none';});}
+            function clickNavLink(link){var currentLink=getCurrentNavLink();if(!currentLink||currentLink===link){return;}
+            currentLink.classList.remove('current');currentLink.classList.remove('click');link.classList.add('click');link.click();currentLink=link;currentLink.classList.add('current');currentLink.classList.remove('click');}
+            function getCurrentNavLink(){return document.querySelector('.examples-subnav li[data-current="true"]');}
+            function getDestNavLink(prev){var link=getCurrentNavLink()
+            var newLink=prev?link.previousElementSibling:link.nextElementSibling;if(!newLink){newLink=document.querySelector('.examples-subnav > li:first-child');}
+            return newLink.querySelector('a').getAttribute('href');}
+            function getPrevNavLink(){return getDestNavLink(true);}
+            function getNextNavLink(){return getDestNavLink(false);}})();
+
+        </script>
+
+
+        <a-scene>
+                <a-assets>
+                  <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+                  <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+                  <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
+                  <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+                  <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+                  <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+                  <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+          
+                  <!-- Image link template to be reused. -->
+                  <script id="link" type="text/html">
+                    <a-entity class="link"
+                      geometry="primitive: plane; height: 1; width: 1"
+                      material="shader: flat; src: ${thumb}"
+                      event-set__1="_event: mousedown; scale: 1 1 1"
+                      event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                      event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                      event-set__4="_event: mouseleave; scale: 1 1 1"
+                      set-image="on: click; target: #image-360; src: ${src}"
+                      sound="on: click; src: #click-sound"></a-entity>
+                  </script>
+                </a-assets>
+          
+                <!-- 360-degree image. -->
+                <a-sky id="image-360" radius="10" src="#city"></a-sky>
+          
+                <!-- Image links. -->
+                <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+                  <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
+                  <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
+                  <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+                </a-entity>
+          
+                <!-- Camera + cursor. -->
+                <a-entity camera look-controls>
+                  <a-cursor id="cursor"
+                    animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                    animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                    event-set__1="_event: mouseenter; color: springgreen"
+                    event-set__2="_event: mouseleave; color: black"
+                    fuse="true"
+                    raycaster="objects: .link"></a-cursor>
+                </a-entity>
+              </a-scene>
 </template>
