@@ -1,6 +1,11 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-layout-component@3.x.x/dist/aframe-layout-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>
+
 </head>
 
 <body>
@@ -1237,27 +1242,10 @@
 </template>
 
 
-<template name="vrtest">
+<template name="vrtest_deactivated">
 
         <div class="row"><br><h4>Maslak No:1 Sanal Gerçeklik Gözlüğü Deneyimi</h4></div><br>
-
-        <style>
-                /* body:before will also work
-                 as will body:after */
-                :root:before {
-                  content: url(/VRTestLobby1.jpg)
-                           url(/VRTestLobby2.jpg);
-                  /* partial fallback */
-                  /*background-image: url(/@/Storage/_files/68/file.jpg);*/
-                  /* visibility: hidden; */
-                  position: absolute;
-                  left: -999em;
-                }
-        </style>
         <div id="vrview" style="width:100%;height:500px;"></div>
-            
-        <script type="text/javascript" src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
-
         <script>
                     var vrView;
 
@@ -1288,22 +1276,6 @@
                 }
             },
             };
-
-            function onLoad() {
-            vrView = new VRView.Player('#vrview', {
-                image: 'https://cors-anywhere.herokuapp.com/http://testpanoramajlltur.herokuapp.com/VRTestLobby1.jpg',
-                is_stereo: false,
-                is_autopan_off: true,
-                width:'100%',
-                height:500
-            });
-
-            vrView.on('ready', onVRViewReady);
-            vrView.on('modechange', onModeChange);
-            vrView.on('click', onHotspotClick);
-            vrView.on('error', onVRViewError);
-            vrView.on('getposition', onGetPosition);
-            }
 
             function onVRViewReady(e) {
             console.log('onVRViewReady');
@@ -1338,6 +1310,8 @@
                 is_autopan_off: true,
             });
 
+          
+
             // Add all the hotspots for the scene
             var newScene = scenes[id];
             var sceneHotspots = Object.keys(newScene.hotspots);
@@ -1358,7 +1332,129 @@
             console.log('Error! %s', e.message);
             }
 
-            window.addEventListener('load', onLoad);
+            function onLoad() {
+            vrView = new VRView.Player('#vrview', {
+                image: 'https://cors-anywhere.herokuapp.com/http://testpanoramajlltur.herokuapp.com/VRTestLobby1.jpg',
+                is_stereo: false,
+                is_autopan_off: true,
+                width:'100%',
+                height:500
+            });
 
+            vrView.on('ready', onVRViewReady);
+            vrView.on('modechange', onModeChange);
+            vrView.on('click', onHotspotClick);
+            vrView.on('error', onVRViewError);
+            vrView.on('getposition', onGetPosition);
+            }
+
+            window.addEventListener('load', onLoad);
+        </script>       
+        <script type="text/javascript" src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+</template>
+
+
+<template name="vr2">
+<!-- <script src='//vizor.io/static/scripts/vizor-360-embed.js' data-vizorurl='//vizor.io/embed/doganbirol13/maslaklinknavigation'></script> -->
+
+
+        <script>
+            AFRAME.registerComponent('cursor-listener', {
+                schema: {
+                on: {type: 'string'},
+                target: {type: 'selector'},
+                src: {type: 'string'},
+                dur: {type: 'number', default: 300}
+                },
+            
+                init: function () {
+                  
+                    cubeslink = document.getElementById('cubes-link');
+                    cubeslink.addEventListener('click', function (evt) {
+                       picture1 = document.getElementById('image-360');
+                        picture1.setAttribute('src', '#cubes');
+                        cubeslink.setAttribute("visible",false);
+                    });
+                  }})
         </script>
+
+                <a-scene>
+                    <a-assets>
+                
+                    <!-- Images. -->
+                    <img id="city" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" crossorigin="anonymous">
+                    <img id="city-thumb" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg" crossorigin="anonymous">
+                    <img id="cubes" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" crossorigin="anonymous">
+                    <img id="cubes-thumb" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg" crossorigin="anonymous">
+                    <img id="sechelt" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">
+                    <img id="sechelt-thumb" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg" crossorigin="anonymous">
+                    
+                    <script id="plane" type="text/html">
+                        <a-entity class="link"
+                        geometry="primitive: plane; height: 1; width: 1"
+                        material="shader: flat; src: ${thumb}"
+                        event-set__1="_event: mousedown; scale: 1 1 1"
+                        event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                        event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                        event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
+                    </script>
+
+                    </a-assets>
+
+                    
+                    <!-- 360-degree image. -->
+                    <a-sky cursor-listener="on: click;" id="image-360" radius="10" src="#city"></a-sky>
+                
+                    <!-- Link we will build. -->
+                <!--             <script id="plane" type="text/html">
+                    <a-entity class="link"
+                    geometry="primitive: plane; height: 1; width: 1"
+                    material="shader: flat; src: ${thumb}"
+                    sound="on: click; src: #click-sound"></a-entity>
+                    </script> -->
+
+                            <a-entity class="link" position="-3 2 -4"
+                                geometry="primitive: plane; height: 1; width: 1"
+                                material="shader: flat; src: #cubes-thumb"></a-entity>
+
+                            <a-entity layout="type: line; margin: 1.5" position="-3 -1 -4">
+                            <!-- Pass image sources to the template. -->
+                            <a-entity class="link" id="cubes-link"
+                                geometry="primitive: plane; height: 1; width: 1"
+                                material="shader: flat; src: #cubes-thumb"
+                                event-set__1="_event: mousedown; scale: 1 1 1"
+                                event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                                event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                                event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
+                                <a-entity class="link" id="city-link"
+                                geometry="primitive: plane; height: 1; width: 1"
+                                material="shader: flat; src: #city-thumb"
+                                event-set__1="_event: mousedown; scale: 1 1 1"
+                                event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                                event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                                event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
+                                <a-entity class="link" id="sechelt-link"
+                                geometry="primitive: plane; height: 1; width: 1"
+                                material="shader: flat; src: #sechelt-thumb"
+                                event-set__1="_event: mousedown; scale: 1 1 1"
+                                event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                                event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                                event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
+                            </a-entity>
+
+                            <!-- <a-entity template="src: #plane" data-thumb="#city-thumb"></a-entity>
+                            <a-entity template="src: #plane" data-thumb="#cubes-thumb"></a-entity>
+                            <a-entity template="src: #plane" data-thumb="#sechelt-thumb"></a-entity> -->
+                           
+
+                            <!-- Camera + Cursor. -->
+                            <a-camera>
+                            <a-cursor id="cursor">
+                                <a-animation begin="click" easing="ease-in" attribute="scale"
+                                            fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                                            from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+                            </a-cursor>
+                            </a-camera>
+                        </a-scene>
 </template>

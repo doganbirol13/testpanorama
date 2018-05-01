@@ -36,12 +36,12 @@ Router.configure({
     if (Meteor.userId()=="BkGApGdanFAFqBM4R") {
       // if the user is not logged in, render the Login template
       this.next();
-      this.redirect('/vrtest');   
+      this.redirect('/vrtest2');   
     } 
     if (Meteor.userId()=="P5zbysdxsKB2TqmAc") {
       // if the user is not logged in, render the Login template
       this.next();
-      this.redirect('/vrtest');   
+      this.redirect('/vrtest2');   
     } 
     //dev users
     if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
@@ -62,12 +62,12 @@ Router.configure({
     if (Meteor.userId()=="NL4LRXyDJ58LZsPxP") {
         // if the user is not logged in, render the Login template
         this.next();
-        this.redirect('/vrtest');  
+        this.redirect('/vrtest2');  
     }
     if (Meteor.userId()=="7khgKyQYR5WtQA3hx") {
       // if the user is not logged in, render the Login template
       this.next();
-      this.redirect('/vrtest');  
+      this.redirect('/vrtest2');  
     }    
     else
     {
@@ -127,6 +127,19 @@ Router.configure({
     this.render('vrtest', {to: 'panoviewer'});
     this.render('anothertemplate', {to: 'anothertemplate'});
   });
+
+  Router.route('/vrtest2', function () {
+    this.render('void', {to: 'welcome'});
+    this.render('welcomepicoffice', {to: 'welcomepic'});
+    this.render('nav2', {to: 'nav1'});
+    this.render('void', {to: 'login'});
+    this.render('maslakno1welcometext', {to: 'welcometext'});
+    this.render('nav2', {to: 'nav1'});
+    this.render('vr2', {to: 'panoviewer'});
+    this.render('anothertemplate', {to: 'anothertemplate'});
+
+  });
+  
   
   // Router.route('/', function () {
   //   this.layout('PageLayout');
