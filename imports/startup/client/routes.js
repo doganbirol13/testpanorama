@@ -135,8 +135,8 @@ Router.configure({
     this.render('void', {to: 'login'});
     this.render('void', {to: 'welcometext'});
     this.render('void', {to: 'nav1'});
-    this.render('vr2', {to: 'panoviewer'});
     this.render('void', {to: 'anothertemplate'});
+    this.render('vr2', {to: 'panoviewer'});
 
   });
   
