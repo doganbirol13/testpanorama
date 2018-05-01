@@ -130,13 +130,13 @@ Router.configure({
 
   Router.route('/vrtest2', function () {
     this.render('void', {to: 'welcome'});
-    this.render('welcomepicoffice', {to: 'welcomepic'});
-    this.render('nav2', {to: 'nav1'});
+    this.render('void', {to: 'welcomepic'});
+    this.render('void', {to: 'nav1'});
     this.render('void', {to: 'login'});
-    this.render('maslakno1welcometext', {to: 'welcometext'});
-    this.render('nav2', {to: 'nav1'});
+    this.render('void', {to: 'welcometext'});
+    this.render('void', {to: 'nav1'});
     this.render('vr2', {to: 'panoviewer'});
-    this.render('anothertemplate', {to: 'anothertemplate'});
+    this.render('void', {to: 'anothertemplate'});
 
   });
   
