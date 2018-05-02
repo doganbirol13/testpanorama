@@ -21,9 +21,15 @@
 
 
 <template name="LayoutForAFrame">
-    <div class="container">
+        <div class="row">
+                <p>{{>yield "welcometext"}}</p>
+            </div>
+    <div class="row" style="width:80%;max-width:1000px;">
             {{>yield "panoviewer"}}
     </div>
+    <div class="row" style="width:80%;max-width:1200px;">
+            <p>{{>yield "anothertemplate"}}</p>
+        </div>
 </template>
 
 <template name="PageLayout">
@@ -1489,13 +1495,47 @@
 
         </script>
 
+        <script>
+                    AFRAME.registerComponent('set-image', {
+                schema: {
+                    on: {type: 'string'},
+                    target: {type: 'selector'},
+                    src: {type: 'string'},
+                    dur: {type: 'number', default: 300}
+                },
+
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+                  
+                    this.setupFadeAnimation();
+                  
+                    el.addEventListener(data.on, function () {
+                      // Fade out image.
+                      data.target.emit('set-image-fade');
+                      // Wait for fade to complete.
+                      setTimeout(function () {
+                        // Set image.
+                        data.target.setAttribute('material', 'src', data.src);
+                      }, data.dur);
+                    });
+                  },
+
+                setupFadeAnimation: function () {
+                    // Appends an <a-animation> that fades to black.
+                }
+                });
+        </script>
+
 
         <a-scene>
+
+               
                 <a-assets>
                   <img id="city" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/banneredentrance.jpg">
-                  <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-                  <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-                  <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+                  <img id="city-thumb" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/vrbuttonentrance.jpg">
+                  <img id="cubes-thumb" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/vrbuttonlobby.jpg">
+                  <img id="sechelt-thumb" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/vrbuttontownhall.jpg">
                   <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
                   <img id="cubes" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/banneredhall.jpg.jpg">
                   <img id="sechelt" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/banneredtownhall.jpg">
