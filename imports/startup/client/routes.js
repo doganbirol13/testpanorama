@@ -129,13 +129,14 @@ Router.configure({
   });
 
   Router.route('/vrtest2', function () {
-    this.render('void', {to: 'welcome'});
+    this.layout('LayoutForAFrame');
+/*     this.render('void', {to: 'welcome'});
     this.render('void', {to: 'welcomepic'});
     this.render('void', {to: 'nav1'});
     this.render('void', {to: 'login'});
     this.render('void', {to: 'welcometext'});
     this.render('void', {to: 'nav1'});
-    this.render('void', {to: 'anothertemplate'});
+    this.render('void', {to: 'anothertemplate'}); */
     this.render('vr2', {to: 'panoviewer'});
 
   });
