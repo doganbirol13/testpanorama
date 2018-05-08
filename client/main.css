@@ -55,6 +55,19 @@ h4 {
     text-align: center;
 }
 
+.aframe-style{
+position: absolute; 
+width: '80%';
+
+}
+
+a-scene {
+  width: '100%';
+  height: '500px'; 
+
+}
+
+
 .parentpicdiv {
     position: relative;
     margin: auto;
@@ -380,4 +393,16 @@ input {
 
 #locationtext{
   color: #e30613;
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+.placeholders1{
+  color:#e30613;
+}
+
+a-entity[visible=false] { 
+  pointer-events: none;
 }

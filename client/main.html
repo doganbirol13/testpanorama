@@ -1,11 +1,12 @@
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
         <script src="https://unpkg.com/aframe-layout-component@3.x.x/dist/aframe-layout-component.min.js"></script>
         <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>
         <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+        <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 
 <!--         <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
         <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
@@ -1372,112 +1373,6 @@
         <script type="text/javascript" src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 </template>
 
-
-<template name="vr2_deactivated">
-<!-- <script src='//vizor.io/static/scripts/vizor-360-embed.js' data-vizorurl='//vizor.io/embed/doganbirol13/maslaklinknavigation'></script> -->
-
-
-        <script>
-            AFRAME.registerComponent('cursor-listener', {
-                schema: {
-                on: {type: 'string'},
-                target: {type: 'selector'},
-                src: {type: 'string'},
-                dur: {type: 'number', default: 300}
-                },
-            
-                init: function () {
-                  
-                    cubeslink = document.getElementById('cubes-link');
-                    cubeslink.addEventListener('click', function (evt) {
-                       picture1 = document.getElementById('image-360');
-                        picture1.setAttribute('src', '#cubes');
-                        cubeslink.setAttribute("visible",false);
-                    });
-                  }})
-        </script>
-
-                <a-scene>
-                    <a-assets>
-                
-                    <!-- Images. -->
-                    <img id="city" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" crossorigin="anonymous">
-                    <img id="city-thumb" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg" crossorigin="anonymous">
-                    <img id="cubes" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" crossorigin="anonymous">
-                    <img id="cubes-thumb" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg" crossorigin="anonymous">
-                    <img id="sechelt" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">
-                    <img id="sechelt-thumb" src="https://cors-anywhere.herokuapp.com/https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg" crossorigin="anonymous">
-                    
-                    <script id="plane" type="text/html">
-                        <a-entity class="link"
-                        geometry="primitive: plane; height: 1; width: 1"
-                        material="shader: flat; src: ${thumb}"
-                        event-set__1="_event: mousedown; scale: 1 1 1"
-                        event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-                        event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-                        event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
-                    </script>
-
-                    </a-assets>
-
-                    
-                    <!-- 360-degree image. -->
-                    <a-sky cursor-listener="on: click;" id="image-360" radius="10" src="#city"></a-sky>
-                
-                    <!-- Link we will build. -->
-                <!--             <script id="plane" type="text/html">
-                    <a-entity class="link"
-                    geometry="primitive: plane; height: 1; width: 1"
-                    material="shader: flat; src: ${thumb}"
-                    sound="on: click; src: #click-sound"></a-entity>
-                    </script> -->
-
-                            <a-entity class="link" position="-3 2 -4"
-                                geometry="primitive: plane; height: 1; width: 1"
-                                material="shader: flat; src: #cubes-thumb"></a-entity>
-
-                            <a-entity layout="type: line; margin: 1.5" position="-3 -1 -4">
-                            <!-- Pass image sources to the template. -->
-                            <a-entity class="link" id="cubes-link"
-                                geometry="primitive: plane; height: 1; width: 1"
-                                material="shader: flat; src: #cubes-thumb"
-                                event-set__1="_event: mousedown; scale: 1 1 1"
-                                event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-                                event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-                                event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
-                                <a-entity class="link" id="city-link"
-                                geometry="primitive: plane; height: 1; width: 1"
-                                material="shader: flat; src: #city-thumb"
-                                event-set__1="_event: mousedown; scale: 1 1 1"
-                                event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-                                event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-                                event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
-                                <a-entity class="link" id="sechelt-link"
-                                geometry="primitive: plane; height: 1; width: 1"
-                                material="shader: flat; src: #sechelt-thumb"
-                                event-set__1="_event: mousedown; scale: 1 1 1"
-                                event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-                                event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-                                event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
-                            </a-entity>
-
-                            <!-- <a-entity template="src: #plane" data-thumb="#city-thumb"></a-entity>
-                            <a-entity template="src: #plane" data-thumb="#cubes-thumb"></a-entity>
-                            <a-entity template="src: #plane" data-thumb="#sechelt-thumb"></a-entity> -->
-                           
-
-                            <!-- Camera + Cursor. -->
-                            <a-camera>
-                            <a-cursor id="cursor">
-                                <a-animation begin="click" easing="ease-in" attribute="scale"
-                                            fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
-                                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
-                                            from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
-                            </a-cursor>
-                            </a-camera>
-                        </a-scene>
-</template>
-
 <template name="vr2">
         <script>
             (function(){if(settings.isMobile){var nonMobileExamples=document.querySelectorAll('[data-supports-mobile="false"]');for(var i=0;i<nonMobileExamples.length;i++){nonMobileExamples[i].parentNode.removeChild(nonMobileExamples[i]);}}
@@ -1495,6 +1390,7 @@
 
         </script>
 
+
         <script>
                     AFRAME.registerComponent('set-image', {
                 schema: {
@@ -1504,75 +1400,237 @@
                     dur: {type: 'number', default: 300}
                 },
 
-                init: function () {
+                update: function (oldData) {
                     var data = this.data;
                     var el = this.el;
                   
-                    this.setupFadeAnimation();
                   
+                    this.setupFadeAnimation();
+                    
+                
                     el.addEventListener(data.on, function () {
                       // Fade out image.
+                     
                       data.target.emit('set-image-fade');
                       // Wait for fade to complete.
                       setTimeout(function () {
-                        // Set image.
-                        data.target.setAttribute('material', 'src', data.src);
+                        // Set image.    
+                        data.target.setAttribute('material', 'src', data.src);                      
                       }, data.dur);
+                   
+                      
                     });
+                
                   },
-
+                 
                 setupFadeAnimation: function () {
                     // Appends an <a-animation> that fades to black.
                 }
                 });
+
+                AFRAME.registerComponent('set-visibility', {
+                schema: {
+                    on: {type: 'string'},
+                    scene: {type: 'string'},
+                    target: {type: 'selectorAll'},
+                    dur: {type: 'number', default: 300}
+                },
+
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+                                
+                    el.addEventListener(data.on, function () {
+
+                      // Fade out image.
+                        var x = data.target;                    
+                        var i;
+                        for (i = 0; i < x.length; i++) {
+                            if(x[i].getAttribute('data-scene') != data.scene){
+                            x[i].setAttribute('visible', false);
+                            x[i].dataset.classy = 'unlink';
+                            data.target[i].firstChild.setAttribute('class', 'unlink');                                                      
+                            }
+                            else {
+                                x[i].setAttribute('visible', true);
+                                x[i].dataset.classy = 'link';
+                                data.target[i].firstChild.setAttribute('class', 'link');                  
+                            }
+                            
+                        };
+                      setTimeout(function () {
+
+                          console.log('timeout');
+                        // Set image.
+                      /*   for (i = 0; i < x.length; i++) {
+                        if(x[i].getAttribute('data-scene') == data.scene){
+                            x[i].setAttribute('visible', true);
+                            x[i].setAttribute('class', 'link');
+                            }
+                        } */
+                       
+                      // Wait for fade to complete.
+                      }, data.dur);
+                     
+                      
+                    });
+                  },
+                });
+                
+               /*  AFRAME.registerComponent('set-visibilityload', {
+                schema: {
+                    on: {type: 'string'},
+                    target: {type: 'selectorAll'},
+                    dur: {type: 'number', default: 3000}
+                },
+
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+                                
+                    el.addEventListener(data.on, function () {
+                      // Fade out image.
+                        var x = data.target;                    
+                        var i;
+                        for (i = 0; i < x.length; i++) {
+                            if(x[i].getAttribute('data-scene') != "#entrance"){
+                            x[i].setAttribute('visible', false);
+                            x[i].setAttribute('data-classy', "unlink");        
+                            }
+                      // Wait for fade to complete.
+                        }
+                      setTimeout(function () {
+                        // Set image.
+                        for (i = 0; i < x.length; i++) {
+                        if(x[i].getAttribute('data-scene') == "#entrance"){
+                            x[i].setAttribute('visible', true);
+                            }
+                        }
+                      }, data.dur);
+
+                      
+                    });
+                  },
+                }); */
         </script>
 
 
-        <a-scene>
+            <!-- init: function() { 
+                                
+                var x = document.querySelectorAll('.placeholders1');                    
+                var i;
+                for (i = 0; i < x.length; i++) {
+                    x[i].classList.add('invisible');
+                };
+                for (i = 0; i < x.length; i++) {
+                    if(x[i].data.scene == document.getElementById('#image-360').data.src){
+                        x[i].classList.remove('invisible');
+                        this.el.object3D.visible = this.data;
+                    }
+                };
+            },              -->
 
-               
+        <a-scene id="scene1">               
                 <a-assets>
-                  <img id="city" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/banneredentrance.jpg">
-                  <img id="city-thumb" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/vrbuttonentrance.jpg">
-                  <img id="cubes-thumb" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/vrbuttonlobby.jpg">
-                  <img id="sechelt-thumb" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/vrbuttontownhall.jpg">
+                  <img id="entrance" crossorigin="anonymous" src="/banneredentrance.jpg">
+                  <img id="entrance-thumb" crossorigin="anonymous" src="/vrbuttonentrance.jpg">
+                  <img id="lobby-thumb" crossorigin="anonymous" src="/vrbuttonlobby.jpg">
+                  <img id="townhall-thumb" crossorigin="anonymous" src="/vrbuttontownhall.jpg">
                   <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-                  <img id="cubes" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/banneredhall.jpg">
-                  <img id="sechelt" crossorigin="anonymous" src="http://testpanoramajlltur.herokuapp.com/banneredtownhall.jpg">
-          
+                  <img id="lobby" crossorigin="anonymous" src="/banneredhall.jpg">
+                  <img id="townhall" crossorigin="anonymous" src="/banneredtownhall.jpg">
+
+                 
+                  <img id="entrance" crossorigin="anonymous" src="/banneredentrance.jpg">
+                  <img id="lobby" crossorigin="anonymous" src="/banneredhall.jpg">
+                  <img id="townhall" crossorigin="anonymous" src="/banneredtownhall.jpg">
+                  <img id="cafeteria" crossorigin="anonymous" src="/banneredcafe.jpg">
+                  <img id="workstations" crossorigin="anonymous" src="/banneredworkstations.jpg">
+                  <img id="mezzanine" crossorigin="anonymous" src="/bannered1stfloor.jpg">
+                  <img id="firstfloor" crossorigin="anonymous" src="/bannered2ndfloor.jpg">
+                  <img id="shellandcore" crossorigin="anonymous" src="/MaslakLinkShellAndCoreElevators.jpg">
+                  <img id="shellandcoreview" crossorigin="anonymous" src="/MaslakLinkShellAndCoreView.jpg">
+                  <img id="shellandcorefront" crossorigin="anonymous" src="/MaslakLinkShellAndCoreLeftPart.jpg">
+                  <img id="shellandcoreback" crossorigin="anonymous" src="/MaslakLinkShellAndCoreRightPart.jpg">
+ 
+
+                  <img id="entrance-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonentrance.jpg">
+                  <img id="lobby-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonlobby.jpg">
+                  <img id="townhall-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttontownhall.jpg">
+                  <img id="cafeteria-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttoncafeteria.jpg">
+                  <img id="workstations-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonworkstations.jpg">
+                  <img id="mezzanine-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonmezzanine.jpg">
+                  <img id="firstfloor-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonfirstfloor.jpg">
+                  <img id="shellandcore-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonshellandcore.jpg">
+                  <img id="floorview-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonfloorview.jpg">
+                  <img id="frontpart-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonfrontpart.jpg">
+                  <img id="backpart-button" crossorigin="anonymous" src="/maslaklinkvrbuttons/buttonbackpart.jpg">
+
+
                   <!-- Image link template to be reused. -->
                   <script id="link" type="text/html">
-                    <a-entity class="link"
+                    <a-entity class="${classy}"
                       geometry="primitive: plane; height: 1; width: 1"
-                      material="shader: flat; src: ${thumb}"
+                      material="shader: flat; src: ${thumb};"
                       event-set__1="_event: mousedown; scale: 1 1 1"
                       event-set__2="_event: mouseup; scale: 1.2 1.2 1"
                       event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
                       event-set__4="_event: mouseleave; scale: 1 1 1"
-                      set-image="on: click; target: #image-360; src: ${src}"
-                      sound="on: click; src: #click-sound"></a-entity>
+                      set-image= "on: click; target: #image-360; src: ${src}"
+                      set-visibility="on: click; target: #linkIdentifier; scene: ${src}"
+                      sound="on: click; src: #click-sound"
+                      ><a-animation dur="7000" attribute="position" direction="alternate" from="0 -0.05 0" to="0 0.05 0"repeat="indefinite"></a-animation></a-entity>
                   </script>
                 </a-assets>
-          
+            
+                
                 <!-- 360-degree image. -->
-                <a-sky id="image-360" radius="10" src="#city"></a-sky>
+                <a-sky id="image-360" radius="10" src="#entrance"></a-sky>
           
                 <!-- Image links. -->
-                <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-                  <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-                  <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-                  <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+               <!--  <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+                  <a-entity class="placeholders1" template="src: #link" data-src="#lobby" data-thumb="#lobby-thumb" data-scene="#entrance"></a-entity>
+                  <a-entity class="placeholders1 invisible" template="src: #link" data-src="#entrance" data-thumb="#entrance-thumb" data-scene="#townhall"  ></a-entity>
+                  <a-entity  class="placeholders1 invisible" template="src: #link" data-src="#townhall" data-thumb="#townhall-thumb" data-scene="#entrance"></a-entity>
                 </a-entity>
-          
+           -->
+
+                <!-- entrance buttons -->
+                <a-entity  position="0 -1 -4" template="src: #link" id="linkIdentifier" data-src="#shellandcore" data-thumb="#shellandcore-button" data-scene="#entrance" data-classy="link" ></a-entity>
+                <a-entity  position="-5 -1 2" rotation="0 90 0" template="src: #link" id="linkIdentifier" data-src="#lobby"  data-thumb="#lobby-button" data-scene="#entrance" data-classy="link"></a-entity>
+                <!-- lobby buttons -->
+                <a-entity  position="-6 0 -3" rotation="0 90 0" template="src: #link" id="linkIdentifier" data-src="#entrance"  data-thumb="#entrance-button" data-scene="#lobby" data-classy="unlink" visible="false"  ></a-entity>
+                <a-entity  position="8 0 1" rotation="0 -90 0" template="src: #link" id="linkIdentifier" data-src="#townhall"  data-thumb="#townhall-button" data-scene="#lobby" data-classy="unlink" visible="false"></a-entity>
+                <a-entity  position="-3.5 1 0" rotation="0 90 0" template="src: #link" id="linkIdentifier" data-src="#mezzanine"  data-thumb="#mezzanine-button" data-scene="#lobby" data-classy="unlink" visible="false" ></a-entity>
+
+                <!-- townhall buttons -->
+                <a-entity  position="-6 -1 -3" rotation="0 90 0" template="src: #link" id="linkIdentifier" data-src="#lobby" data-thumb="#lobby-button" data-scene="#townhall" data-classy="unlink" visible="false" ></a-entity>
+                <a-entity  position="7 0 -7" rotation="0 -45 0" template="src: #link" id="linkIdentifier" data-src="#cafeteria" data-thumb="#cafeteria-button" data-scene="#townhall" data-classy="unlink" visible="false" ></a-entity>
+                <a-entity  position="2 0 -1" rotation="0 0 0" template="src: #link" id="linkIdentifier" data-src="#workstations" data-thumb="#workstations-button" data-scene="#townhall" data-classy="unlink" visible="false" ></a-entity>
+                <!-- cafeteria buttons -->
+                <a-entity  position="-5 0 -4" rotation="0 0 0" template="src: #link" id="linkIdentifier" data-src="#townhall" data-thumb="#townhall-button" data-scene="#cafeteria" data-classy="unlink" visible="false" ></a-entity>
+                <!-- workstations buttons -->
+                <a-entity  position="6 0 -4" rotation="0 0 0" template="src: #link" id="linkIdentifier" data-src="#cafeteria" data-thumb="#cafeteria-button" data-scene="#workstations" data-classy="unlink" visible="false" ></a-entity>
+                <a-entity  position="-2 0 -1" rotation="0 0 0" template="src: #link" id="linkIdentifier" data-src="#townhall" data-thumb="#townhall-button" data-scene="#workstations" data-classy="unlink" visible="false" ></a-entity>
+                <!-- mezzanine buttons -->
+                <a-entity  position="1 0 -3" rotation="0 0 0" template="src: #link" id="linkIdentifier" data-src="#firstfloor" data-thumb="#firstfloor-button" data-scene="#mezzanine" data-classy="unlink" visible="false" ></a-entity>
+                <a-entity  position="3 0 -7" rotation="0 0 0" template="src: #link" id="linkIdentifier" data-src="#lobby" data-thumb="#lobby-button" data-scene="#mezzanine" data-classy="unlink" visible="false" ></a-entity>
+                <!-- firstfloor buttons -->
+                <a-entity  position="-7 0 -1" rotation="0 45 0" template="src: #link" id="linkIdentifier" data-src="#mezzanine" data-thumb="#mezzanine-button" data-scene="#firstfloor" data-classy="unlink" visible="false" ></a-entity>
+                <!-- shellandcore buttons -->
+                <a-entity  position="-7 0 -1" rotation="0 90 0" template="src: #link" id="linkIdentifier" data-src="#entrance" data-thumb="#entrance-button" data-scene="#shellandcore" data-classy="unlink" visible="false" ></a-entity>
+
+
                 <!-- Camera + cursor. -->
-                <a-entity camera look-controls>
-                  <a-cursor id="cursor"
-                    animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-                    animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-                    event-set__1="_event: mouseenter; color: springgreen"
-                    event-set__2="_event: mouseleave; color: black"
-                    fuse="true"
-                    raycaster="objects: .link"></a-cursor>
+                <a-entity camera look-controls set-visibilityload="on: loaded; target: #linkIdentifier;">
+                        <a-cursor id="cursor" 
+                        animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                        animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                        event-set__1="_event: mouseenter; color: red"
+                        event-set__2="_event: mouseleave; color: black"
+                        fuse="true"
+                        raycaster="objects: .link"></a-cursor>               
                 </a-entity>
+               
               </a-scene>
 </template>

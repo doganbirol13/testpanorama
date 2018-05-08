@@ -101,9 +101,8 @@ Router.configure({
     this.render('nav2', {to: 'nav1'});
     this.render('void', {to: 'login'});
     this.render('welcometext2', {to: 'welcometext'});
-    this.render('nav2', {to: 'nav1'});
     this.render('officenavigation', {to: 'panoviewer'});
-    this.render('anothertemplate', {to: 'anothertemplate'});
+    this.render('vr2', {to: 'anothertemplate'});
   });
 
   Router.route('/maslakno1', function () {
@@ -112,9 +111,8 @@ Router.configure({
     this.render('nav2', {to: 'nav1'});
     this.render('void', {to: 'login'});
     this.render('maslakno1welcometext', {to: 'welcometext'});
-    this.render('nav2', {to: 'nav1'});
     this.render('maslakno1navigation', {to: 'panoviewer'});
-    this.render('anothertemplate', {to: 'anothertemplate'});
+    this.render('void', {to: 'anothertemplate'});
   });
 
   Router.route('/vrtest', function () {
@@ -123,7 +121,6 @@ Router.configure({
     this.render('nav2', {to: 'nav1'});
     this.render('void', {to: 'login'});
     this.render('maslakno1welcometext', {to: 'welcometext'});
-    this.render('nav2', {to: 'nav1'});
     this.render('vrtest', {to: 'panoviewer'});
     this.render('anothertemplate', {to: 'anothertemplate'});
   });
@@ -132,12 +129,11 @@ Router.configure({
     // this.layout('LayoutForAFrame');
     this.render('void', {to: 'welcome'});
     this.render('void', {to: 'welcomepic'});
-    this.render('void', {to: 'nav1'});
-    this.render('void', {to: 'login'});
+    this.render('nav2', {to: 'nav1'});
+    this.render('vr2', {to: 'login'});
     this.render('void', {to: 'welcometext'});
-    this.render('void', {to: 'nav1'});
     this.render('void', {to: 'anothertemplate'});
-    this.render('vr2', {to: 'panoviewer'});
+    this.render('void', {to: 'panoviewer'});
   });
   
   
