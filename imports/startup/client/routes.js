@@ -36,7 +36,7 @@ Router.configure({
     if (Meteor.userId()=="BkGApGdanFAFqBM4R") {
       // if the user is not logged in, render the Login template
       this.next();
-      this.redirect('/vrtest2');   
+      this.redirect('/maslaklinkvr');   
     } 
     if (Meteor.userId()=="P5zbysdxsKB2TqmAc") {
       // if the user is not logged in, render the Login template
