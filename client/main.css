@@ -406,3 +406,9 @@ input {
 a-entity[visible=false] { 
   pointer-events: none;
 }
+
+
+.aframebox {
+  height: 500px;
+  width: 100%;
+  }

@@ -41,7 +41,7 @@ Router.configure({
     if (Meteor.userId()=="P5zbysdxsKB2TqmAc") {
       // if the user is not logged in, render the Login template
       this.next();
-      this.redirect('/vrtest2');   
+      this.redirect('/maslaklinkvr');   
     } 
     //dev users
     if (Meteor.userId()=="RAXNn7yekgGDddmzp") {
@@ -62,12 +62,12 @@ Router.configure({
     if (Meteor.userId()=="NL4LRXyDJ58LZsPxP") {
         // if the user is not logged in, render the Login template
         this.next();
-        this.redirect('/vrtest2');  
+        this.redirect('/maslaklinkvr');  
     }
     if (Meteor.userId()=="7khgKyQYR5WtQA3hx") {
       // if the user is not logged in, render the Login template
       this.next();
-      this.redirect('/vrtest2');  
+      this.redirect('/maslaklinkvr');  
     }    
     else
     {
@@ -102,7 +102,7 @@ Router.configure({
     this.render('void', {to: 'login'});
     this.render('welcometext2', {to: 'welcometext'});
     this.render('officenavigation', {to: 'panoviewer'});
-    this.render('vr2', {to: 'anothertemplate'});
+    this.render('void', {to: 'anothertemplate'});
   });
 
   Router.route('/maslakno1', function () {
@@ -125,7 +125,7 @@ Router.configure({
     this.render('anothertemplate', {to: 'anothertemplate'});
   });
 
-  Router.route('/vrtest2', function () {
+  Router.route('/maslaklinkvr', function () {
     // this.layout('LayoutForAFrame');
     this.render('void', {to: 'welcome'});
     this.render('void', {to: 'welcomepic'});
