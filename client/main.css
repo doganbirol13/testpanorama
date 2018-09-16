@@ -3,10 +3,13 @@
     box-sizing: border-box;
   }
 
-  body {
+body {
     height: 100%;
     position: absolute;
     width: 100%;
+    background-image: url("/background.png");
+    background-size: cover;
+    background-repeat: repeat-y;
   }
 
 .navbar-brand
@@ -25,17 +28,13 @@ max-width: 100%;
 margin: auto 0%;
 }
 
-body  {
+/* .background  {
     background-color: #626468;
 }
+ */
+/* .background2  {
 
-.background  {
-    background-color: #626468;
-}
-
-.background2  {
-    background-image: url("/background.png");
-}
+} */
 
 h3 {
     color:#e30613;
@@ -46,7 +45,7 @@ h4 {
 }
 .custom-style {
     margin: auto;
-    width: 90%;
+    width: 100%;
     text-align: center; 
 }
 .vid-row-style {
@@ -77,22 +76,41 @@ a-scene {
     position: relative;
     margin: auto;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 70%;
+  /*   padding-top: 15px;
+    padding-bottom: 15px; */
+    width: 100%;
   }
 .pic1 {
     position: relative;
     top: 0;
     left: 0;
-    width:60%;
+    width:40%;
   }
 .pic2 {
     position: absolute;
-    top: 40%;
-    left: 20%;
-    width: 40%;
+    top: 50%;
+    left: 30%;
+    width: 20%;
   }
+
+.playerMix {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%
+}
+.floorplanMix{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+}
+
+.floorplanMix:hover{
+  right: 0;
+  bottom: 0;
+  width: 40%;
+}
   .pic3 {
     position: relative;
     max-width: 100%;
@@ -276,7 +294,11 @@ input {
 }
 
 .btn-primary {
-    background-color: #e30613;
+  background-color: #e30613;
+}
+
+.btn-primary:hover {
+  background-color: #e30613;
 }
 
 .custom-headline {
@@ -347,7 +369,6 @@ input {
 
 .void-row-style {
         margin: auto;
-        background-color: #e8e5dd;
         width: 1000px;
         text-align: center;
     }

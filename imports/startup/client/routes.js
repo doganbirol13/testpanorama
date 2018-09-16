@@ -16,7 +16,13 @@ Router.configure({
   Router.onBeforeAction(function () {
     // all properties available in the route function
     // are also available here such as this.params
-  
+
+    if (!Meteor.userId()) {
+      // if the user is not logged in, render the Login template
+      this.next();
+      this.redirect('/');
+    }
+
     //prodUsers
     if (Meteor.userId()=="wFuArX85jiCYPXTre") {
       // if the user is not logged in, render the Login template
@@ -54,7 +60,7 @@ Router.configure({
         this.next();
         this.redirect('/maslaklink');   
     } 
-    if (Meteor.userId()=="AwcYyZ727EJXj9jj7") {
+    if (Meteor.user().emails[0].address=="maslakno1@eu.jll.com") {
       // if the user is not logged in, render the Login template
       this.next();
       this.redirect('/maslakno1');  
@@ -68,7 +74,16 @@ Router.configure({
       // if the user is not logged in, render the Login template
       this.next();
       this.redirect('/maslaklinkvr');  
+    }
+
+    //hybrid users
+    if (Meteor.user().emails[0].address=="konyada@eu.jll.com") {
+      // if the user is not logged in, render the Login template
+      //this also covers the prod
+      this.next();
+      this.redirect('/konyada');  
     }    
+    
     else
     {
       this.next();
@@ -83,7 +98,6 @@ Router.configure({
     this.render('login', {to: 'login'});
     this.render('void', {to: 'panoviewer'});
     this.render('loginpagewelcometext', {to: 'welcometext'});
-    this.render('void', {to: 'anothertemplate'});
   });
   
   Router.route('/logged', function () {
@@ -92,7 +106,6 @@ Router.configure({
     this.render('welcomepicmall', {to: 'welcomepic'});
     this.render('nav2', {to: 'nav1'});
     this.render('viewer', {to: 'panoviewer'});
-    this.render('anothertemplate', {to: 'anothertemplate'});
   });
   
   Router.route('/maslaklink', function () {
@@ -102,7 +115,6 @@ Router.configure({
     this.render('void', {to: 'login'});
     this.render('welcometext2', {to: 'welcometext'});
     this.render('officenavigation', {to: 'panoviewer'});
-    this.render('void', {to: 'anothertemplate'});
   });
 
   Router.route('/maslakno1', function () {
@@ -112,7 +124,6 @@ Router.configure({
     this.render('void', {to: 'login'});
     this.render('maslakno1welcometext', {to: 'welcometext'});
     this.render('maslakno1navigation', {to: 'panoviewer'});
-    this.render('void', {to: 'anothertemplate'});
   });
 
   Router.route('/vrtest', function () {
@@ -122,7 +133,6 @@ Router.configure({
     this.render('void', {to: 'login'});
     this.render('maslakno1welcometext', {to: 'welcometext'});
     this.render('vrtest', {to: 'panoviewer'});
-    this.render('anothertemplate', {to: 'anothertemplate'});
   });
 
   Router.route('/maslaklinkvr', function () {
@@ -132,8 +142,16 @@ Router.configure({
     this.render('nav2', {to: 'nav1'});
     this.render('vr2', {to: 'login'});
     this.render('void', {to: 'welcometext'});
-    this.render('void', {to: 'anothertemplate'});
     this.render('void', {to: 'panoviewer'});
+  });
+
+  Router.route('/konyada', function () {
+    this.render('void', {to: 'welcome'});
+    this.render('welcomepicmall', {to: 'welcomepic'});
+    this.render('nav2', {to: 'nav1'});
+    this.render('void', {to: 'login'});
+    this.render('konyadawelcometext', {to: 'welcometext'});
+    this.render('konyada', {to: 'panoviewer'});
   });
   
   
