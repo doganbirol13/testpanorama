@@ -261,6 +261,47 @@ a-scene {
     width: 3%;
     height: auto;
   }
+
+  .konyadaEntrance {
+    position: absolute;
+    top: 22%;
+    left: 55%;
+    width: 3%;
+    height: auto;
+  }
+
+  .konyadaStairs {
+    position: absolute;
+    top: 22%;
+    left: 33%;
+    width: 3%;
+    height: auto;
+  }
+  
+  .konyadaFirstFloor {
+    position: absolute;
+    top: 3%;
+    left: 89%;
+    width: 3%;
+    height: auto;
+  }
+
+  .konyadaFirstFloorLeftAisle {
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    width: 3%;
+    height: auto;
+  }
+
+  .konyadaFirstFloorLeftAisleBridge {
+    position: absolute;
+    top: 65%;
+    left: 9%;
+    width: 3%;
+    height: auto;
+  }
+
 .formcustom {
     margin: auto;
     width: 80%;

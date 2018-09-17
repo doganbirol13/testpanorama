@@ -1808,9 +1808,9 @@
                     v,!1),F.removeEventListener("pointerdown",d,!1),F.removeEventListener("pointermove",a,!1),F.removeEventListener("pointerup",K,!1),F.removeEventListener("pointerleave",K,!1));l.innerHTML="";l.classList.remove("pnlm-container");l.classList.remove("pnlm-grab");l.classList.remove("pnlm-grabbing")}}return{viewer:function(g,k){return new ia(g,k)}}}(window,document); 
                 </script>
         
-        <div class="row">
+        <div class="row playerMix">
             <div id="maslakno1maingateplayer" style="width:100%;height:500px;margin:auto;" class="grow"></div>
-                <script>
+            <script>
                     var viewer = pannellum.viewer('maslakno1maingateplayer', {   
                         "default": {
                             "firstScene": "konyadaEntrance",
@@ -1931,98 +1931,56 @@
                                     },   
                                 ]
                             },
-                            "maslakno1floorrighthandside": {
-                                "type": "equirectangular",
-                                "panorama": "/MaslakNo1Floor2.jpg",
-                                "vaov": 180,
-                                "autoRotate": -7,   
-                                "yaw": 200,
-                                "hotSpots": [
-                                    {
-                                        "pitch": 0,
-                                        "yaw": 20,
-                                        "type": "scene",
-                                        "text": "Front Side",
-                                        "sceneId": "maslakno1floorlefthandside",
-                                        "targetYaw": 0
-                                    }, 
-                                    {
-                                        "pitch": 0,
-                                        "yaw": 85,
-                                        "type": "scene",
-                                        "text": "Floor Edge",
-                                        "sceneId": "maslakno1flooredge",
-                                        "targetYaw": 0
-                                    },
-                                    {
-                                        "pitch": 0,
-                                        "yaw": -45,
-                                        "type": "scene",
-                                        "text": "Elevators",
-                                        "sceneId": "maslakno1elevators",
-                                        "targetYaw": 0
-                                    }          
-                                ]
-                            },
                         }
                         });
                     </script>
-                   <!--     <script>
+                       <script>
 
                         function sceneChangeListener() {
-                            if (viewer.getScene()=='maslakno1lobby1') {
-                                if (!$('li a[href="#maslakno1entrancefloor"]').parent().hasClass("active")) {
+                            if (viewer.getScene()=='konyadaEntrance') {
+                                if (!$('li a[href="#konyadaGroundFloor"]').parent().hasClass("active")) {
                          
                                 $("div .tab-pane").removeClass('active');
-                                $('li a[href="#maslakno1entrancefloor"]').tab('show');
+                                $('li a[href="#konyadaGroundFloor"]').tab('show');
                                 }
                                 $("a img").parent().removeClass('grow3');
-                                $("#MaslakNo1Lobby1Button").parent().addClass('grow3');
+                                $("#konyadaEntranceButton").parent().addClass('grow3');
                             }
-                            else if (viewer.getScene()=='maslakno1lobby2') {
-                                if (!$('li a[href="#maslakno1entrancefloor"]').parent().hasClass("active")) {
+                            else if (viewer.getScene()=='konyadaStairs') {
+                                if (!$('li a[href="#konyadaGroundFloor"]').parent().hasClass("active")) {
                          
                                 $("div .tab-pane").removeClass('active');
-                                $('li a[href="#maslakno1entrancefloor"]').tab('show');
+                                $('li a[href="#konyadaGroundFloor"]').tab('show');
                                 }
                                 $("a img").parent().removeClass('grow3');
-                                $("#MaslakNo1Lobby2Button").parent().addClass('grow3');
+                                $("#konyadaStairsButton").parent().addClass('grow3');
                             }
-                            else if (viewer.getScene()=='maslakno1elevators') {
-                                if (!$('li a[href="#maslakno1floor"]').parent().hasClass("active")) {
+                            else if (viewer.getScene()=='konyadaFirstFloor') {
+                                if (!$('li a[href="#konyada1stFloor"]').parent().hasClass("active")) {
                          
                                 $("div .tab-pane").removeClass('active');
-                                $('li a[href="#maslakno1floor"]').tab('show');
+                                $('li a[href="#konyada1stFloor"]').tab('show');
                                 }
                                 $("a img").parent().removeClass('grow3');
-                                $("#MaslakNo1ElevatorsButton").parent().addClass('grow3');
+                                $("#konyadaFirstFloorButton").parent().addClass('grow3');
                             }
-                            else if (viewer.getScene()=='maslakno1floorrighthandside') {
-                                if (!$('li a[href="#maslakno1floor"]').parent().hasClass("active")) {
+                            else if (viewer.getScene()=='konyadaFirstFloorLeftAisle') {
+                                if (!$('li a[href="#konyada1stFloor"]').parent().hasClass("active")) {
                          
                                 $("div .tab-pane").removeClass('active');
-                                $('li a[href="#maslakno1floor"]').tab('show');
+                                $('li a[href="#konyada1stFloor"]').tab('show');
                                 }
                                 $("a img").parent().removeClass('grow3');
-                                $("#MaslakNo1RightButton").parent().addClass('grow3');
+                                $("#konyadaFirstFloorLeftAisleButton").parent().addClass('grow3');
                             }
-                            else if (viewer.getScene()=='maslakno1floorlefthandside') {
-                                if (!$('li a[href="#maslakno1floor"]').parent().hasClass("active")) {
+                            else if (viewer.getScene()=='konyadaFirstFloorLeftAisleBridge') {
+                                if (!$('li a[href="#konyada1stFloor"]').parent().hasClass("active")) {
                          
                                 $("div .tab-pane").removeClass('active');
-                                $('li a[href="#maslakno1floor"]').tab('show');
+                                $('li a[href="#konyada1stFloor"]').tab('show');
                                 }
                                 $("a img").parent().removeClass('grow3');
-                                $("#MaslakNo1LeftButton").parent().addClass('grow3');
-                            }
-                            else if (viewer.getScene()=='maslakno1flooredge') {
-                                if (!$('li a[href="#maslakno1floor"]').parent().hasClass("active")) {
-                         
-                                $("div .tab-pane").removeClass('active');
-                                $('li a[href="#maslakno1floor"]').tab('show');
-                                }
-                                $("a img").parent().removeClass('grow3');
-                                $("#MaslakNo1EdgeButton").parent().addClass('grow3');
+                                $("#konyadaFirstFloorLeftAisleBridgeButton").parent().addClass('grow3');
                             }
                             else{
                                 console.log("another scene");
@@ -2039,24 +1997,70 @@
 
                          
 
-                        $("#MaslakNo1Lobby1Button").click( function () {
-                            viewer.loadScene('maslakno1lobby1');
+                        $("#konyadaEntranceButton").click( function () {
+                            viewer.loadScene('konyadaEntrance');
                         });
-                        $("#MaslakNo1Lobby2Button").click( function () {
-                            viewer.loadScene('maslakno1lobby2');
+                        $("#konyadaStairsButton").click( function () {
+                            viewer.loadScene('konyadaStairs');
                         });
-                        $("#MaslakNo1ElevatorsButton").click( function () {
-                            viewer.loadScene('maslakno1elevators');
+                        $("#konyadaFirstFloorButton").click( function () {
+                            viewer.loadScene('konyadaFirstFloor');
                         });
-                        $("#MaslakNo1RightButton").click( function () {
-                            viewer.loadScene('maslakno1floorrighthandside');
+                        $("#konyadaFirstFloorLeftAisleButton").click( function () {
+                            viewer.loadScene('konyadaFirstFloorLeftAisle');
                         });
-                        $("#MaslakNo1LeftButton").click( function () {
-                            viewer.loadScene('maslakno1floorlefthandside');
-                        });
-                        $("#MaslakNo1EdgeButton").click( function () {
-                            viewer.loadScene('maslakno1flooredge');
-                        });                           
-                    </script> -->
+                        $("#konyadaFirstFloorLeftAisleBridgeButton").click( function () {
+                            viewer.loadScene('konyadaFirstFloorLeftAisleBridge');
+                        });                      
+                    </script>
+
+                    <div class="floorplanMix" > 
+                        <ul class="nav nav-tabs centered" role="tablist"> 
+                        <li class="active"><a data-toggle="tab" href="#konyadaGroundFloor" role="tab" id="konyadaGroundFloorTab">Ground Floor</a></li>
+                        <li><a data-toggle="tab" href="#konyada1stFloor" role="tab" id="konyadaFirstFloorTab">First Floor</a></li>
+                        </ul>
+                        <script>
+
+                            $("li a").click(function() {
+                            $("a img").parent().removeClass('grow3');
+                            });
+
+                            $("a img").click(function() {
+                            $(this).parent().prevAll().removeClass('grow3');
+                            $(this).parent().nextAll().removeClass('grow3');
+                            $(this).parent().addClass('grow3');
+                            });  
+                        </script>
+                    
+                        <div class="tab-content layoutplan">
+                            <div id="konyadaGroundFloor" class="tab-pane fade in active">
+                                <div id="konyadaGroundFloorLayout" class="parentpicdiv2">                   
+                                    <img class="pic3 img-fluid contentbg" src="/konyadaGroundFloorLayout.jpg" />
+                                    <a title="testlobby">
+                                        <img id="konyadaEntranceButton" title="Entrance" class="konyadaEntrance img-fluid grow2" src="/dot.png">
+                                    </a>
+                                    <a>
+                                        <img id="konyadaStairsButton" title="Stairs"  class="konyadaStairs img-fluid grow2" src="/dot.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="konyada1stFloor" class="tab-pane fade">
+                                <div class="parentpicdiv2">                   
+                                    <img class="pic3 img-fluid contentbg" src="/konyada1stFloorLayout.jpg" />
+                                    <a>
+                                        <img id="konyadaFirstFloorButton" title="First Floor" class="konyadaFirstFloor img-fluid grow2" src="/dot.png">
+                                    </a>
+                                    <a>
+                                        <img id="konyadaFirstFloorLeftAisleButton" title="Left Aisle" class="konyadaFirstFloorLeftAisle img-fluid grow2" src="/dot.png">
+                                    </a>
+                                    <a>
+                                        <img id="konyadaFirstFloorLeftAisleBridgeButton" title="Left Aisle Bridge" class="konyadaFirstFloorLeftAisleBridge img-fluid grow2" src="/dot.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <p style="background-color:#ffffff" id="locationtext" class="invisibletext">Active Location</p>
+                </div> 
         </div>
 </template>
