@@ -55,7 +55,7 @@ Router.configure({
       this.next();
       this.redirect('/logged');
     }
-    if (Meteor.userId()=="QmtP65ptQej65npDm") {
+    if (Meteor.user().emails[0].address=="maslaklink@eu.jll.com") {
         // if the user is not logged in, render the Login template
         this.next();
         this.redirect('/maslaklink');   
